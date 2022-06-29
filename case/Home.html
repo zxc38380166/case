@@ -6,12 +6,12 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>2022最新娛樂城推薦-首選GS娛樂城【GSBET】</title>
-   <link rel="stylesheet" type="text/css" href="homeStyle.css">
+   <link rel="stylesheet" type="text/css" href="../css/homeStyle.css">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-      crossorigin="anonymous"></script>
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+      </script>
    <script src="https://unpkg.com/vue@next"></script>
 </head>
 
@@ -20,19 +20,16 @@
       <Sidebar></Sidebar>
       <div class="navbar">
          <div style="width:10%"></div>
-         <div style="width: 80%; " class="d-flex justify-content-center">
+         <div style="width: 80%" class="d-flex justify-content-center">
             <!-- logo -->
-            <a href="javascript:void(0)" style="width: 15%" class=" d-none d-xl-block ">
-               <img src="../images\logo\logo_ezcvc2_c_scale,w_600.png" style="width: 100%;height: 100%;" alt="">
+            <a @click="tooglePage('homeData')" href="javascript:void(0)" style="width: 25%" class="d-none d-xl-block ">
+               <img src="../images\logo\logo_ezcvc2_c_scale,w_600.png" style="width: 250px;height: 100%;" alt="">
             </a>
             <!-- navbarImg -->
-            <a href="javascript:void(0)" style="width: 75%;" class="ms-4">
-               <img
-                  src="https://images.pexels.com/photos/2387819/pexels-photo-2387819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  style="width: 100%;height: 100px;" alt="">
+            <a href="javascript:void(0)" style="width: 65%;" class="ms-4">
             </a>
             <!-- 側欄選單 -->
-            <div href="javascript:void(0)" style="width: 10%;" class="mt-3">
+            <a href="javascript:void(0)" style="width: 10%;" class="mt-3">
                <button @click="menuShow=true" type="button" class="btn ">
                   <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-list"
                      viewBox="0 0 16 16">
@@ -40,21 +37,19 @@
                         d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
                   </svg>
                </button>
-               <div v-if="menuShow" class="menu flex-column d-flex justify-content-center align-items-center">
-                  <div style="cursor:pointer">
-                     <div @click="menuShow=false" class="fs-3 text-danger">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                           class="mx-1 bi bi-x-square" viewBox="0 0 16 16">
-                           <path
-                              d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
-                           <path
-                              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                        </svg>Close Menu
-                     </div>
+               <div v-if="menuShow"
+                  class="menu homeNavbar-Y flex-column d-flex justify-content-center align-items-center">
+                  <div @click="menuShow=false" class="fs-3 text-danger ">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="mx-1 bi bi-x-square" viewBox="0 0 16 16">
+                        <path
+                           d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                        <path
+                           d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                     </svg>Close Menu
                      <img draggable="false" src="../images\logo\logo_ezcvc2_c_scale,w_600.png" style="width: 75%"
                         class="py-3" @click="tooglePage('homeData')">
                   </div>
-
                   <div class="w-75 py-2" v-for="item in menuData">
                      <button @click="tooglePage(item.anchorId)" id="aee" type="button"
                         class="btn w-100 btn-outline-secondary">
@@ -62,7 +57,7 @@
                      </button>
                   </div>
                </div>
-            </div>
+            </a>
          </div>
          <div style="width:10%"></div>
       </div>
@@ -77,7 +72,7 @@
                <div class="card-body fs-4">
                   <!-- 首選GS娛樂城 -->
                   <h2 class="card-title py-2 fw-bold" id="homeData">2022最新娛樂城推薦首選GS娛樂城(GSBET)</h2>
-                  <img src="../images/banner/banner.jpg" class="banner-img" style="width:100%" alt="">
+                  <img src="../images/banner/banner.jpg" class="banner-img" style="width:90%" alt="">
                   <div v-for="item in homeData">
                      <p class="card-text text pt-4">{{item.data}}</p>
                   </div>
@@ -160,7 +155,7 @@
                      <!-- 註冊流程 -->
                      <div class="d-flex justify-content-evenly row">
                         <div class="card col-12 col-md-4 my-3 border-0" v-for="(item, key) in signUp">
-                           <img :src="item.imgUrl" height=300 class="card-img-top" alt="...">
+                           <img :src="item.imgUrl" height=400 class="card-img-top" alt="...">
                            <h3 class="pt-4"> {{ item.title }} </h3>
                            <div class="card-body">
                               <ul class="fs-6">
@@ -233,8 +228,7 @@
          </div>
          <!-- QA內容 -->
          <div v-else-if="showData=='Question'" style="width:80%" id="Question">
-            <img src="../images\indexbanner\banner0518_muai1i_c_scale,w_1368.jpg" style="width:100%" class="pt-5"
-               alt="">
+            <img src="../images\indexbanner\banner0518_muai1i_c_scale,w_1368.jpg" style="width:90%" class="pt-5" alt="">
             <h1 class="py-3">娛樂城Q&A</h1>
             <div v-for="(item,index) in question" class="accordion py-2" id="accordionPanelsStayOpenExample">
                <div class="accordion-item">
@@ -265,22 +259,26 @@
             </div>
             <div class="text fs-5" v-for="item in lottery2">
                <p class="fw-bold fs-3">{{ item.title }}</p>
-               <img v-if="item.imgUrl" class="pb-5" v-if="item.imgUrl !== undefined" :src="item.imgUrl" style="width:90%" alt="">
+               <img v-if="item.imgUrl" class="pb-5" v-if="item.imgUrl !== undefined" :src="item.imgUrl"
+                  style="width:90%" alt="">
                <p>{{ item.data }} </p>
             </div>
             <div class="text fs-5" v-for="item in lottery3">
                <p class="fw-bold fs-3">{{ item.title }}</p>
-               <img v-if="item.imgUrl" class="pb-5" v-if="item.imgUrl !== undefined" :src="item.imgUrl" style="width:90%" alt="">
+               <img v-if="item.imgUrl" class="pb-5" v-if="item.imgUrl !== undefined" :src="item.imgUrl"
+                  style="width:90%" alt="">
                <p class="text-start">{{ item.data }} </p>
             </div>
             <div class="text fs-5" v-for="item in lottery4">
                <p class="fw-bold fs-3">{{ item.title }}</p>
-               <img v-if="item.imgUrl" class="pb-5" v-if="item.imgUrl !== undefined" :src="item.imgUrl" style="width:90%" alt="">
+               <img v-if="item.imgUrl" class="pb-5" v-if="item.imgUrl !== undefined" :src="item.imgUrl"
+                  style="width:90%" alt="">
                <p>{{ item.data }} </p>
             </div>
             <div class="text fs-5" v-for="item in lottery5">
                <p class="fw-bold fs-3">{{ item.title }}</p>
-               <img v-if="item.imgUrl" class="pb-5" v-if="item.imgUrl !== undefined" :src="item.imgUrl" style="width:90%" alt="">
+               <img v-if="item.imgUrl" class="pb-5" v-if="item.imgUrl !== undefined" :src="item.imgUrl"
+                  style="width:90%" alt="">
                <p>{{ item.data }} </p>
             </div>
             <table class="my-5 table table-hover table-light">
@@ -301,7 +299,8 @@
             </table>
             <div class="text fs-4" v-for="item in lottery6">
                <p class="fw-bold">{{ item.title }}</p>
-               <img v-if="item.imgUrl" class="pb-5" v-if="item.imgUrl !== undefined" :src="item.imgUrl" style="width:90%" alt="">
+               <img v-if="item.imgUrl" class="pb-5" v-if="item.imgUrl !== undefined" :src="item.imgUrl"
+                  style="width:90%" alt="">
                <p>{{ item.data }} </p>
             </div>
             <p style="height: 200px;" class="card-text fs-2 py-2"><small class="text-muted">{{ title }}</small></p>
@@ -313,34 +312,46 @@
             <hr>
             <div class="text fs-5 py-3" v-for="item in analyzelottery1">
                <p>{{item.data}}</p>
-               <img v-if="item.imgUrl" :src="item.imgUrl" class="pb-5" style="width: 80%;" alt=""> 
+               <img v-if="item.imgUrl" :src="item.imgUrl" class="pb-5" style="width: 80%;" alt="">
             </div>
             <div class="text fs-5" v-for="item in analyzelottery2">
                <p class="fw-bold fs-3 text-danger">{{ item.title }}</p>
-               <img v-if="item.imgUrl" :src="item.imgUrl" class="pb-5" style="width: 80%;" alt=""> 
+               <img v-if="item.imgUrl" :src="item.imgUrl" class="pb-5" style="width: 80%;" alt="">
                <p>{{item.data}}</p>
             </div>
             <div class="text fs-5" v-for="item in analyzelottery3">
                <p class="fw-bold fs-3 text-danger">{{ item.title }}</p>
-               <img v-if="item.imgUrl" :src="item.imgUrl" class="pb-5" style="width: 80%;" alt=""> 
+               <img v-if="item.imgUrl" :src="item.imgUrl" class="pb-5" style="width: 80%;" alt="">
                <p>{{item.data}}</p>
             </div>
             <p class="fw-bold fs-3 text-danger">運彩分析網站推薦</p>
             <div class="text fs-5" v-for="item in analyzelottery4">
                <p class="fw-bold fs-3">{{ item.title }}</p>
-               <img v-if="item.imgUrl" :src="item.imgUrl" :class="{'pb-5':item.imgUrl}" style="width: 80%;" alt=""> 
+               <img v-if="item.imgUrl" :src="item.imgUrl" :class="{'pb-5':item.imgUrl}" style="width: 80%;" alt="">
                <p>{{item.data}}</p>
             </div>
             <p class="fw-bold fs-3 text-danger">運彩分析十大心法</p>
             <div class="text fs-5" v-for="item in analyzelottery5">
                <p class="fw-bold fs-3">{{ item.title }}</p>
-               <img v-if="item.imgUrl" :src="item.imgUrl" :class="{'pb-5':item.imgUrl}" style="width: 80%;" alt=""> 
+               <img v-if="item.imgUrl" :src="item.imgUrl" :class="{'pb-5':item.imgUrl}" style="width: 80%;" alt="">
                <p>{{item.data}}</p>
             </div>
             <p style="height: 200px;" class="card-text fs-2 py-2"><small class="text-muted">{{ title }}</small></p>
          </div>
          <!-- 內容右側 -->
-         <div style="width:10%"></div>
+         <div style="width:10%">
+            <div class="top-align" @click="anchorFocus('app')">
+               <button type="button" class="btn btn-outline-secondary"><svg xmlns="http://www.w3.org/2000/svg"
+                     width="20" height="30" fill="currentColor" class="bi bi-chevron-double-up" viewBox="0 0 16 16">
+                     <path fill-rule="evenodd"
+                        d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z" />
+                     <path fill-rule="evenodd"
+                        d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                  </svg>
+                  <br>Top
+               </button>
+            </div>
+         </div>
       </div>
    </div>
    </div>
@@ -348,6 +359,23 @@
 
 </html>
 <script>
+   document.onkeydown = function () {
+      if (window.event && window.event.keyCode == 123) {
+         //F12禁用
+         event.keyCode = 0;
+         event.returnValue = false;
+      }
+      if (window.event && window.event.keyCode == 13) {
+         window.event.keyCode = 505;
+      }
+      if (window.event && window.event.keyCode == 8) {
+         alert(str + "\n请使用Del键进行字符的删除操作！");
+         window.event.returnValue = false;
+      }
+   }
+   document.oncontextmenu = function () {
+      window.event.returnValue = false; //滑鼠右鍵禁用
+   }
    const app = Vue.createApp({
       data() {
          return {
@@ -355,7 +383,7 @@
             showData: 'homeData',
             showShareArticle: 'dg百家樂娛樂城推薦',
             menuShow: false,
-            buttonList: [     //按鈕列表
+            buttonList: [ //按鈕列表
                {
                   data: '登入',
                   color: 'success'
@@ -367,7 +395,7 @@
                   color: 'danger'
                }
             ],
-            menuData: [   //Menu欄資料 
+            menuData: [ //Menu欄資料 
                {
                   data: '首頁',
                   anchorId: 'app'
@@ -392,7 +420,6 @@
                }, {
                   data: '娛樂城分享',
                   anchorId: 'shareArticle',
-                  url: 'add.html'
                }, {
                   data: '百家樂',
                   anchorId: 'Baccarat',
@@ -408,7 +435,7 @@
                   anchorId: ''
                },
             ],
-            homeData: [  //2022最新娛樂城推薦首選GS娛樂城(GSBET)
+            homeData: [ //2022最新娛樂城推薦首選GS娛樂城(GSBET)
                {
                   data: '數位時代下的網路博弈幾乎已經成為國際間的流行趨勢。全世界線上博弈產業每年約有兩兆元的產值，所以不少國家和地區開始陸續將博弈活動合法化，導致於博弈產業越來越蓬勃，但對於尚未開放博弈合法化的國家來說，皆逐漸轉而發展線上娛樂，致使博弈產業逐漸以線上娛樂城的嶄新形態持續的成長，而這當中也包含了台灣。'
                },
@@ -419,7 +446,7 @@
                   data: '所以，我們分別從玩家選擇的原因來觀察發現，多數玩家都是直接參考網路上的娛樂城推薦文章，這些為數眾多的論壇或推薦內容，極有可能都只是娛樂城自己的網告介紹，當然也就失去了公平、客觀的立場，而為了校正這樣的情況，也為了讓熱愛線上博弈遊戲的玩家，能在最短的時間內找到最適合自己的娛樂城，我們針對2022年多家娛樂城的背景特色及娛樂城優惠等面向，進行更詳細的介紹和分析，來幫助玩家更簡單的進行比較與選擇，還在為選擇哪一間娛樂城煩惱的讀者，本站也將提供你2022最值得參考的評比內容以及最值得推薦的娛樂城名單，那就是GS娛樂城(GSBET)。'
                }
             ],
-            analysisFit: [    //娛樂城分析適合誰
+            analysisFit: [ //娛樂城分析適合誰
                {
                   data: '線上娛樂城這麼多間，到底哪一間適合我呢？又或者我們該如何選擇娛樂城呢？'
                }, {
@@ -428,7 +455,7 @@
                   data: '而本站就本著最公平客觀的立場，依照平台的安全性、出入金速度、優惠活動與遊戲數量等評比依據，按最終的評測結果給出娛樂城推薦名單，對於初入娛樂城的新手來說，本站就像是一本闖關的金手指，同時對於資深玩家而言，本站也能作為檢視自身平台的借鑑，以此作為適合閱讀的對象。'
                }
             ],
-            signUp: [     //娛樂城體驗金註冊流程
+            signUp: [ //娛樂城體驗金註冊流程
                {
                   imgUrl: '../images/lottery/lottery1.jpg',
                   title: '先完成GS娛樂城(GSBET)平台註冊',
@@ -461,7 +488,7 @@
                   ]
                }
             ],
-            ExperienceGold: [   //娛樂城體驗金
+            ExperienceGold: [ //娛樂城體驗金
                {
                   data: '許多娛樂城都會提供玩家各種體驗金的優惠活動，目的為了吸引更多玩家青睞，而選擇自家的平台，對玩家來說，娛樂城體驗金不只是平台額外的福利，更是一個可以事先體驗娛樂城好壞的途徑。'
                }, {
@@ -493,7 +520,7 @@
 
 
             ],
-            question: [       //Q&A
+            question: [ //Q&A
                {
                   title: 'GS娛樂城(GSBET)評價好嗎',
                   data: 'GS娛樂城(GSBET)是玩家們一致推薦最優質的老字號品牌，前衛新穎版面及技術，持續引領著亞洲博弈產業，擁有最多人的團隊，給您最高質量的服務及平台，同時GS娛樂城(GSBET)的玩家只要能夠獲勝，都可以正常出金，沒玩過娛樂城的新手玩家們，誠摯推薦可以選擇GS娛樂城(GSBET)。'
@@ -514,252 +541,229 @@
                   data: 'GS娛樂城(GSBET)提供業界最高標準的個人隱私保密措施，以及高強度的資金安全體系，玩家在網上所支付的所有資金交易，都將由國際金融機構，通過高標準的安全和機密的區域網路底下進行，所有進入娛樂城的玩家帳戶也必需有玩家唯一的登錄帳號和密碼，以確保客戶的資金安全有保障，同時也保證GS娛樂城(GSBET)可以提供一個完全公正和安全的網路遊戲空間。​'
                }
             ],
-            lottery1: [
-               {
-                  data: '受到台灣運動風氣的提升，連帶影響運彩的風靡熱度，尤其美國職籃NBA、職棒MLB或是日本職棒NPB等知名聯盟賽事開打之際，幾乎都可看到每間運彩店家擠滿玩運彩的人，而這也是臺灣政府提供的合法運彩博弈的下注管道，但玩運彩如此的盛行，你真的了解該怎麼玩嗎？或是你原本就已經了解如何下注，而想更聰明的玩運彩嗎？'
-               }, {
-                  data: '在台灣博弈產業尚未合法化，台灣運動彩券（簡稱「台灣運彩」）是少數台灣民眾可以公開進行的合法投注。這個由台灣政府合法授權的體育投注彩券，是在2008年5月2日開始正式發行，而民眾玩運彩不僅可以為國家體育發展盡一分力，還能增加政府的稅收，彌補政府財政不足的部分。我們根據目前台灣運彩的投注賽事進行分析，讓想嘗試玩運彩的朋友先了解台灣運彩怎麼玩；在熟悉運彩如何操作之後，可以盡情享受體育投注的樂趣。'
-               }, {
-                  data: '追溯台灣最早發行彩券的時期，是1949年國民政府遷台的時候。當時發行彩券的目的是為了籌措國家財源，初期所獲得的所有盈餘都用在國家建設上；不過從1985年7月開始，為了配合社會福利政策，所有繳庫的盈餘以及逾期未領的獎金，全部皆委託台灣銀行辦理，並用於推動社會福利事業上。'
-               }, {
-                  data: '目前發行運動彩券主要目的是籌募體育運動資源，用作興建各大體育場館，以及促進國家體育運動的發展。由於台灣政府體育運動經費，長期面對資金嚴重不足的問題，進而影響整個體育運動事務的推廣；因此玩運彩的民眾花錢買的每一張彩券，其實都是在協助政府廣納體育經費財源，在享受體育投注樂趣的同時，也在支持台灣體育事業，具有做公益的性質。'
-               }
+            lottery1: [{
+               data: '受到台灣運動風氣的提升，連帶影響運彩的風靡熱度，尤其美國職籃NBA、職棒MLB或是日本職棒NPB等知名聯盟賽事開打之際，幾乎都可看到每間運彩店家擠滿玩運彩的人，而這也是臺灣政府提供的合法運彩博弈的下注管道，但玩運彩如此的盛行，你真的了解該怎麼玩嗎？或是你原本就已經了解如何下注，而想更聰明的玩運彩嗎？'
+            }, {
+               data: '在台灣博弈產業尚未合法化，台灣運動彩券（簡稱「台灣運彩」）是少數台灣民眾可以公開進行的合法投注。這個由台灣政府合法授權的體育投注彩券，是在2008年5月2日開始正式發行，而民眾玩運彩不僅可以為國家體育發展盡一分力，還能增加政府的稅收，彌補政府財政不足的部分。我們根據目前台灣運彩的投注賽事進行分析，讓想嘗試玩運彩的朋友先了解台灣運彩怎麼玩；在熟悉運彩如何操作之後，可以盡情享受體育投注的樂趣。'
+            }, {
+               data: '追溯台灣最早發行彩券的時期，是1949年國民政府遷台的時候。當時發行彩券的目的是為了籌措國家財源，初期所獲得的所有盈餘都用在國家建設上；不過從1985年7月開始，為了配合社會福利政策，所有繳庫的盈餘以及逾期未領的獎金，全部皆委託台灣銀行辦理，並用於推動社會福利事業上。'
+            }, {
+               data: '目前發行運動彩券主要目的是籌募體育運動資源，用作興建各大體育場館，以及促進國家體育運動的發展。由於台灣政府體育運動經費，長期面對資金嚴重不足的問題，進而影響整個體育運動事務的推廣；因此玩運彩的民眾花錢買的每一張彩券，其實都是在協助政府廣納體育經費財源，在享受體育投注樂趣的同時，也在支持台灣體育事業，具有做公益的性質。'
+            }],
+            lottery2: [{
+               title: '台灣運彩簡介',
+               data: '台灣運彩自2008年正式開始發行後，不但提升了關心體育賽事的人口，也帶動了全民運動的風氣。根據體委會調查，越喜歡運動的民眾對玩運彩越感興趣，支持率高達70%。由於運彩可以取代非法的地下運動賭博活動，彌補台灣部分民眾的競猜心理，滿足他們對博弈或賭博的追求；某種程度上也是在打擊猖獗的地下賭博活動，減少整體社會的非法賭博行為蔓延。',
+               imgUrl: '../images/lotterygame/lotterygame_02.jpg'
+            }, {
+               data: '第一屆的運彩是由台北富邦銀行擔任發行機構，經營受委託機構為運彩科技，發行期間為2008年至2013年；第二屆的運彩發行機構為威剛科技，經營受委託機構為台灣運動彩券公司，發行期間為2014年至2023年。'
+            }, {
+               data: '根據財政部國庫署數據現實，台灣運彩在2008年的年度銷售額為52億元，2012年曾一度達到第一屆高峰——151億元；第二屆由威剛科技接手後，2014年的發行金額高達240億元，而且有逐年攀升的跡象。這意味著合法化的運動彩券深受台灣民眾的歡迎，玩運彩人口的快度成長則證實運動和博弈並無衝突，並開始朝著正面的方向前進。'
+            }, {
+               data: '在第二屆的運彩發行期間，目前全台灣一共有1,500家投注站，並且從2014年4月起開始提供網路投注服務。台灣運彩提供棒球、籃球、足球、羽球、網球、冰球、賽車、高爾夫、撞球、美式足球、排球等超過10種運動項目，同時有20多種玩法供想玩運彩的消費者投注。'
+            }],
+            lottery3: [{
+               title: '誰可以玩運彩',
+               imgUrl: '../images/lotterygame/lotterygame_03.jpg',
+               data: '基本上，只要是18歲以上的成年人、有足夠的賭金，就可以去玩運彩了。為了打造一個健康娛樂的環境，台灣運彩公司明文規定，以下三類人禁止玩運彩：'
+            }, {
+               data: '1.由於運動彩券涉及金錢交易，未成年者不得購買或兌現運動彩券。'
+            }, {
+               data: '2.因直接利害關係，運彩發行機構及受委託機構員工，不得購買、受讓或兌領彩券。'
+            }, {
+               data: '3.為了避免舉辦單位人員與參與賽事之相關隊職員操弄比賽結果，納入投注標的的運動競技賽事的相關人員，均不得購買、受讓或兌領其所舉辦或參與賽事之運動彩券。'
+            }, {
+               data: '除了上述人士，所有在台灣的本地人與外國人都具有玩運彩的資格。'
+            }],
+            lottery4: [{
+               title: '運彩玩法有哪些',
+               imgUrl: '../images/lotterygame/lotterygame_04.jpg',
+               data: '任何納入投注標的體育賽事，在比賽開始前或比賽開打後賽事進行中（一般稱「場中投注」），所有玩家皆有玩運彩的資格。目前台灣運彩最盛行的運動賽事，主要是棒球、籃球以及足球，常見玩法有四種：'
+            }, {
+               title: '讓分盤',
+               data: '通常實力懸殊的比賽都會開讓分盤，玩運彩就是預測在規定比賽時間結束時、經過讓分調整後，哪支球隊是獲勝的一方。只要預測與讓分調整後的結果相同，投注該隊的玩家就有資格贏得獎金。舉例：美國職棒明星隊對上中華職棒，美國隊讓5.5分買美國隊贏球。比賽結果是美8：中1，投注美國的玩家就會贏錢；但要是最後結果是美3：中2，就算你買美國贏也不會收到錢。'
+            }, {
+               title: '大小盤',
+               data: '預測對戰球隊在規定比賽結束時，兩隊總得分是大於或小於運彩公司所指定的分數。舉例：美國職籃公鹿對籃網，大小分盤口開在210.5分。如果玩運彩的玩家買大贏，兩隊總分大於210.5分（211分）以上的玩家就會獲勝；反之，兩隊總分低於210.5分（210分）以下的話，就會是輸的一方。'
+            }, {
+               title: '不讓分盤',
+               data: '通常實力相近的比賽才會開不讓分盤，玩運彩就是預測一場運動比賽的對戰球隊（或球員）在比賽結束時，哪支球隊（或是哪位球員）會獲得最終的勝利。舉例：戰績排行榜前兩名的球隊對戰，雙方實力相近，於是開了不讓分盤口。只要玩家投注的球隊獲得最終勝利，就可以把錢贏回家。'
+            }, {
+               title: '串關',
+               data: '玩家必須同時猜測兩場以上的比賽結果，無論是大小分、不讓分、讓分，這些方式皆適用。舉例：玩家同時下注3場比賽，第一場買主隊讓分，第二場買主隊不讓分，第三場買客隊贏；只要上述3場任何一場沒有猜中，本次玩運彩投注的玩家就會輸錢。反之，如果三場皆猜中，賠率就是三場相乘。'
+            }],
+            lottery5: [{
+               title: '運彩投注賽事',
+               imgUrl: '../images/lotterygame/lotterygame_05.jpg',
+               data: '第一屆運彩發行期間，只有三個運動種類可供民眾投注，分別是籃球、棒球和足球，而且籃球賽事僅限於美國職業籃球賽NBA。進入第二屆運彩發行期後，除了上述最受台灣民眾歡迎的前三類運動，台灣運彩開始新增了網球、冰球、高爾夫、賽車、美式足球、撞球、排球等七項賽事，近年也把電子競技也納入投注賽事，讓玩運彩的朋友有更多選擇。'
+            }, {
+               data: '值得一提的是，投注賽事也漸漸多元化，例如籃球賽事投注就增加了美國職業女籃、歐洲籃球與台灣超級籃球賽等，讓體育迷有更多的體育賽事投注選擇。相信在不久的未來，隨著民眾對其他體育賽事的關注增加，台灣運彩應該也會慢慢開放其他比較冷門的體育賽事。'
+            }],
+            lottery6: [{
+               title: '運彩投注賠率',
+               imgUrl: '../images/lotterygame/lotterygame_06.jpg',
+               data: '所謂的賠率是指計算運彩投注可贏得彩金的倍率。這個賠率的制訂是由莊家（即運彩公司）所主導的，依照對戰的組合，較強的隊伍勝率越高，賠率則越低；反之，較弱的隊伍勝率越低，賠率則越高。'
+            }, {
+               title: '讓分盤',
+               data: '一般賠率可分成三種表現方式，包括歐式賠率（國際賠率）、英式賠率以及美式賠率。'
+            }, {
+               title: '1.歐式賠率（國際賠率）：計算金額包含原始投注的額度，賠率計算金額就是派彩金的金額。',
+            }, {
+               title: '2.英式賠率：賠率計算金額不包含原始投注的額度，賠率計算金額就是獲利金額。',
+            }, {
+               title: '3.美式賠率：有正負之分，正賠率為弱隊的賠率，負賠率則為強隊的賠率。',
+            }],
+            lotteryTable: [{
+               title: '籃球',
+               regularEvents: '美國職業籃球聯盟（男）、美國職業籃球聯盟（女）、台灣超級籃球聯賽、歐洲籃球、NCAA錦標賽、菲律賓國家男子籃球隊、歐洲各國職業籃球聯盟、日本職籃BJ聯盟',
+               nonRoutineEvents: '世界籃球錦標賽、奧林匹克運動會（奧運）'
+            },
+            {
+               title: '棒球',
+               regularEvents: '美國職業棒球大聯盟、中華職業棒球大聯盟、日本野球機構、韓國職棒（KBO聯賽）、澳洲棒球聯盟',
+               nonRoutineEvents: '加勒比海大賽、美日職棒大賽、世界棒球經典賽、亞洲職棒大賽'
+            },
+            {
+               title: '足球',
+               regularEvents: '英格蘭足球超級聯賽（英超）、德國足球甲級聯賽（德甲）、西班牙足球甲級聯賽（西甲）、義大利足球甲級聯賽（義甲）、法國足球甲級聯賽（法甲）、日本J聯盟、澳洲A聯盟、美國職業足球大聯盟（MLS）',
+               nonRoutineEvents: '國際足球總會世界盃（世界盃）、欧洲足球锦标赛（歐洲盃）、奧林匹克運動會（奧運）'
+            },
+            {
+               title: '網球',
+               regularEvents: '澳洲網球公開賽（澳網）、法國網球公開賽（法網）、溫布頓網球錦標賽（溫布頓）、美國網球公開賽（美網）',
+               nonRoutineEvents: '奧林匹克運動會（奧運）'
+            },
+            {
+               title: '冰球',
+               regularEvents: '國家冰球聯盟、大陸冰球聯盟',
+               nonRoutineEvents: '冬季奧林匹克運動會（冬奧）'
+            },
+            {
+               title: '美式足球',
+               regularEvents: '國家美式足球聯盟',
+               nonRoutineEvents: '冬季奧林匹克運動會（冬奧）'
+            },
+            {
+               title: '排球',
+               regularEvents: '巴西超級聯賽、義大利超級聯賽、波蘭超級聯賽、日本V1聯賽、南韓V聯賽、國家聯賽',
+               nonRoutineEvents: '奧林匹克運動會（奧運）'
+            },
+            {
+               title: '羽球',
+               regularEvents: '世羽聯Grade 2等級1~等級4賽事',
+               nonRoutineEvents: '世界羽聯世界錦標賽（世錦賽）、奧林匹克運動會（奧運）'
+            },
+            {
+               title: '高爾夫',
+               regularEvents: '男子職業高爾夫球四大賽（美國名人賽、美國公開賽、英國公開賽、PGA錦標賽）女子職業高爾夫球五大賽（全日空錦標賽、LPGA錦標賽、美國女子公開賽、英國女子公開賽、愛維養錦標賽）',
+               nonRoutineEvents: '奧林匹克運動會（奧運）'
+            },
+            {
+               title: '撞球',
+               regularEvents: '中國公開賽、安麗益之源盃',
+               nonRoutineEvents: ''
+            },
+            {
+               title: '賽車',
+               regularEvents: '一級方程式賽車F1、世界摩托車錦標賽MotoGP',
+               nonRoutineEvents: ''
+            },
+            {
+               title: '電子競技',
+               regularEvents: '英雄聯盟',
+               nonRoutineEvents: ''
+            },
             ],
-            lottery2: [
-               {
-                  title: '台灣運彩簡介',
-                  data: '台灣運彩自2008年正式開始發行後，不但提升了關心體育賽事的人口，也帶動了全民運動的風氣。根據體委會調查，越喜歡運動的民眾對玩運彩越感興趣，支持率高達70%。由於運彩可以取代非法的地下運動賭博活動，彌補台灣部分民眾的競猜心理，滿足他們對博弈或賭博的追求；某種程度上也是在打擊猖獗的地下賭博活動，減少整體社會的非法賭博行為蔓延。',
-                  imgUrl: '../images/lotterygame/lotterygame_02.jpg'
-               }, {
-                  data: '第一屆的運彩是由台北富邦銀行擔任發行機構，經營受委託機構為運彩科技，發行期間為2008年至2013年；第二屆的運彩發行機構為威剛科技，經營受委託機構為台灣運動彩券公司，發行期間為2014年至2023年。'
-               }, {
-                  data: '根據財政部國庫署數據現實，台灣運彩在2008年的年度銷售額為52億元，2012年曾一度達到第一屆高峰——151億元；第二屆由威剛科技接手後，2014年的發行金額高達240億元，而且有逐年攀升的跡象。這意味著合法化的運動彩券深受台灣民眾的歡迎，玩運彩人口的快度成長則證實運動和博弈並無衝突，並開始朝著正面的方向前進。'
-               }, {
-                  data: '在第二屆的運彩發行期間，目前全台灣一共有1,500家投注站，並且從2014年4月起開始提供網路投注服務。台灣運彩提供棒球、籃球、足球、羽球、網球、冰球、賽車、高爾夫、撞球、美式足球、排球等超過10種運動項目，同時有20多種玩法供想玩運彩的消費者投注。'
-               }
+            analyzelottery1: [{
+               data: '運動彩券最迷人的地方，莫過於玩家可以通過賽前資訊的掌握和分析，提高自身投注的勝算。事實上，會影響體育賽事的因素有很多（例如氣候、球員狀態）；運彩分析之所以如此重要，主要原因在於任何一種運動賽事都是「有跡可循的」。如果玩家連球隊的實力、主客場影響、賽事規則等基礎知識都一竅不通，而且也沒有作任何運彩分析，就算贏了也純屬運氣好而已。',
+               imgUrl: '../images/lotterygame/lotteryanalyze/lotteryanalyze1.jpg'
+            },],
+            analyzelottery2: [{
+               title: '運彩分析的重要性',
+               data: '事實上，運動彩券並非純粹靠運氣的博弈遊戲，而是一種將各方龐大數據和資料整合起來，再進一步推算和分析的投資方式。舉凡球隊戰績、傷兵名單、上下半場和全場的歷史數據紀錄、各項玩法的歷史紀錄等——要每個玩家都一一牢記的話，實在強人所難，這時候靠專業的運彩分析專家或網站會相對輕鬆許多。',
+               imgUrl: '../images/lotterygame/lotteryanalyze/lotteryanalyze2.jpg'
+            }, {
+               data: '任何人去買台灣運彩，無非都是抱著贏錢的目的去投注。不過人人都要贏錢，卻不是所有人都懂得運彩分析，有些剛入門運彩的玩家甚至連怎麼下注都不知道。雖然網路充斥各種運彩分析資訊，自稱專業可靠的運彩分析網站比比皆是，那麼到底哪個運彩網站的可信度最高呢？'
+            }, {
+               data: '要分辨專家或是騙子，第一個可以排除的，就是沒有任何評論網站，只有一昧報明牌的網站。其實運彩分析就和投資股票一樣，檯面上有很多投資大師都說自己在幾天內賺了多少錢，然而對自己虧了多少閉口不提。要是你在網路上找到一家運彩分析網站，內容完全沒有提到任何的賽事評論，只會重複強調自己贏幾場、賺多少錢，奉勸你還是不要相信比較好。'
+            }],
+            analyzelottery3: [{
+               title: '為什麼需要運彩分析',
+               data: '所謂知己知彼，百戰百勝，台灣運彩官網上開放投注的體育賽事，通常都持續長達半年以上的時間；如果能利用專業的運彩分析文章所提供的各類賽事以及盤口分析，不但可以替玩家省下大量時間與精力，還能透過閱讀運彩分析文章，迅速累積對各種賽事成績的評估能力，使自身分析準確率得以提升。',
+               imgUrl: '../images/lotterygame/lotteryanalyze/lotteryanalyze3.jpg'
+            }, {
+               data: '運彩分析網站上的資訊都是長時間有系統性被整理出來的，主要目的是希望玩家可以透過簡單易懂的運彩分析文，協助玩家更精準地投注每場比賽，將每一分血汗錢都創造出更大的效益。如果玩家都看得懂球賽，也認識球隊、球員、球場等任何可以幫玩家增加勝率的資訊，基本上你對運動彩券會更有信心。'
+            }, {
+               data: '雖然龐大的資訊量並不能保證玩家肯定可以贏錢，但就好比玩股票一樣，掌握越多資訊越好，聰明的投資者總是先了解投資項目的基本資料後，才會開始擬定策略、設定預算，最後才決定要投入多少金額。'
+            }, {
+               data: '目前台灣具有參考價值的運彩分析網站，舉例「玩運彩」、「運彩小偉」、「運彩報馬仔」，都是累積了一定數量的分析文章，而且這些文章都是由專業體育分析師撰寫的，並在各大新聞網站或報紙的體育版設有專欄，文章品質算是有一定的水準保證。'
+            }],
+            analyzelottery4: [{
+               title: '玩運彩',
+               data: '「玩運彩」成立於2009年2月24日，至今已有13年的歷史。這是一個由熱愛體育賽事以及運彩愛好者聚集而成的社群平台，也是目前台灣規模最大的運動彩券社群網站。「玩運彩」提供了各種類體育賽事的評論、即時比分分析、賽事預測等服務，其創辦人還有被媒體報導過，算是台灣運彩分析的老字號。',
+               imgUrl: '../images/lotterygame/lotteryanalyze/lotteryanalyze4.jpg'
+            }, {
+               title: '運彩報馬仔',
+               data: '「運彩報馬仔」是一個專門分析運彩投注的平台，特別專注在NBA美國職籃。這個運彩分析平台擁有NBA完整的球員及球隊賽事紀錄，以及全部賽事盤口資訊。無論是剛接觸運彩想找明牌的運彩迷，或是想嘗試自己作運彩分析的玩家，「運彩報馬仔」會是一個很適合的平台。',
+               imgUrl: '../images/lotterygame/lotteryanalyze/lotteryanalyze5.jpg'
+            }, {
+               title: '運彩小偉',
+               data: '「運彩小偉」是一位熱心又專業的運彩分析師，目前在中華民國運動賽事分析師協會擔任重要職務，負責教育新進成員及研習營講師。「運彩小偉」網站是他正職之餘經營的一個運彩分析網站，主要提供的資訊包括各種運動賽事的運彩分析（台灣運彩盤）、運彩博弈相關技巧以及運彩相關資訊，同時也會不時分享個人球衣收藏及相關資訊。',
+               imgUrl: '../images/lotterygame/lotteryanalyze/lotteryanalyze6.jpg'
+
+            }, {
+               data: '「運彩小偉」目前分析的運動賽事包括足球（英超、德甲、義甲、法甲、西甲及各大盃賽）、籃球（NBA）、棒球（MLB）、冰球（NHL）、網球（男網大小賽事）、美式足球（NFL）、電競（英雄聯盟LOL、LPL）。目前他在TSNA設有NBA專欄，在FB、YouTube上也很活躍。'
+            },
+            {
+               data: '上述運彩分析網站均有介紹運彩的基礎知識與專業名詞，讓玩家在下注之前可先掌握一些實用資訊。一般運彩新手玩家最在意押注可以贏多少錢，即「盤口」與「賠率」。'
+            }, {
+               data: '「盤口」是運彩公司為了補足比賽雙方實力差距而向民眾公開的數據，目的是讓比賽兩隊贏得比賽的勝率盡量維持各50%。為了讓玩家願意花錢投注弱隊，運彩公司必須提供「賠率」，讓玩家獲得更大的利益。'
+            }
             ],
-            lottery3: [
-               {
-                  title: '誰可以玩運彩',
-                  imgUrl: '../images/lotterygame/lotterygame_03.jpg',
-                  data: '基本上，只要是18歲以上的成年人、有足夠的賭金，就可以去玩運彩了。為了打造一個健康娛樂的環境，台灣運彩公司明文規定，以下三類人禁止玩運彩：'
-               }, {
-                  data: '1.由於運動彩券涉及金錢交易，未成年者不得購買或兌現運動彩券。'
-               }, {
-                  data: '2.因直接利害關係，運彩發行機構及受委託機構員工，不得購買、受讓或兌領彩券。'
-               }, {
-                  data: '3.為了避免舉辦單位人員與參與賽事之相關隊職員操弄比賽結果，納入投注標的的運動競技賽事的相關人員，均不得購買、受讓或兌領其所舉辦或參與賽事之運動彩券。'
-               }, {
-                  data: '除了上述人士，所有在台灣的本地人與外國人都具有玩運彩的資格。'
-               }
-            ],
-            lottery4: [
-               {
-                  title: '運彩玩法有哪些',
-                  imgUrl: '../images/lotterygame/lotterygame_04.jpg',
-                  data: '任何納入投注標的體育賽事，在比賽開始前或比賽開打後賽事進行中（一般稱「場中投注」），所有玩家皆有玩運彩的資格。目前台灣運彩最盛行的運動賽事，主要是棒球、籃球以及足球，常見玩法有四種：'
-               }, {
-                  title: '讓分盤',
-                  data: '通常實力懸殊的比賽都會開讓分盤，玩運彩就是預測在規定比賽時間結束時、經過讓分調整後，哪支球隊是獲勝的一方。只要預測與讓分調整後的結果相同，投注該隊的玩家就有資格贏得獎金。舉例：美國職棒明星隊對上中華職棒，美國隊讓5.5分買美國隊贏球。比賽結果是美8：中1，投注美國的玩家就會贏錢；但要是最後結果是美3：中2，就算你買美國贏也不會收到錢。'
-               }, {
-                  title: '大小盤',
-                  data: '預測對戰球隊在規定比賽結束時，兩隊總得分是大於或小於運彩公司所指定的分數。舉例：美國職籃公鹿對籃網，大小分盤口開在210.5分。如果玩運彩的玩家買大贏，兩隊總分大於210.5分（211分）以上的玩家就會獲勝；反之，兩隊總分低於210.5分（210分）以下的話，就會是輸的一方。'
-               }, {
-                  title: '不讓分盤',
-                  data: '通常實力相近的比賽才會開不讓分盤，玩運彩就是預測一場運動比賽的對戰球隊（或球員）在比賽結束時，哪支球隊（或是哪位球員）會獲得最終的勝利。舉例：戰績排行榜前兩名的球隊對戰，雙方實力相近，於是開了不讓分盤口。只要玩家投注的球隊獲得最終勝利，就可以把錢贏回家。'
-               }, {
-                  title: '串關',
-                  data: '玩家必須同時猜測兩場以上的比賽結果，無論是大小分、不讓分、讓分，這些方式皆適用。舉例：玩家同時下注3場比賽，第一場買主隊讓分，第二場買主隊不讓分，第三場買客隊贏；只要上述3場任何一場沒有猜中，本次玩運彩投注的玩家就會輸錢。反之，如果三場皆猜中，賠率就是三場相乘。'
-               }
-            ],
-            lottery5: [
-               {
-                  title: '運彩投注賽事',
-                  imgUrl: '../images/lotterygame/lotterygame_05.jpg',
-                  data: '第一屆運彩發行期間，只有三個運動種類可供民眾投注，分別是籃球、棒球和足球，而且籃球賽事僅限於美國職業籃球賽NBA。進入第二屆運彩發行期後，除了上述最受台灣民眾歡迎的前三類運動，台灣運彩開始新增了網球、冰球、高爾夫、賽車、美式足球、撞球、排球等七項賽事，近年也把電子競技也納入投注賽事，讓玩運彩的朋友有更多選擇。'
-               }, {
-                  data: '值得一提的是，投注賽事也漸漸多元化，例如籃球賽事投注就增加了美國職業女籃、歐洲籃球與台灣超級籃球賽等，讓體育迷有更多的體育賽事投注選擇。相信在不久的未來，隨著民眾對其他體育賽事的關注增加，台灣運彩應該也會慢慢開放其他比較冷門的體育賽事。'
-               }
-            ],
-            lottery6: [
-               {
-                  title: '運彩投注賠率',
-                  imgUrl: '../images/lotterygame/lotterygame_06.jpg',
-                  data: '所謂的賠率是指計算運彩投注可贏得彩金的倍率。這個賠率的制訂是由莊家（即運彩公司）所主導的，依照對戰的組合，較強的隊伍勝率越高，賠率則越低；反之，較弱的隊伍勝率越低，賠率則越高。'
-               }, {
-                  title: '讓分盤',
-                  data: '一般賠率可分成三種表現方式，包括歐式賠率（國際賠率）、英式賠率以及美式賠率。'
-               }, {
-                  title: '1.歐式賠率（國際賠率）：計算金額包含原始投注的額度，賠率計算金額就是派彩金的金額。',
-               }, {
-                  title: '2.英式賠率：賠率計算金額不包含原始投注的額度，賠率計算金額就是獲利金額。',
-               }, {
-                  title: '3.美式賠率：有正負之分，正賠率為弱隊的賠率，負賠率則為強隊的賠率。',
-               }
-            ],
-            lotteryTable: [
-               {
-                  title: '籃球',
-                  regularEvents: '美國職業籃球聯盟（男）、美國職業籃球聯盟（女）、台灣超級籃球聯賽、歐洲籃球、NCAA錦標賽、菲律賓國家男子籃球隊、歐洲各國職業籃球聯盟、日本職籃BJ聯盟',
-                  nonRoutineEvents: '世界籃球錦標賽、奧林匹克運動會（奧運）'
-               },
-               {
-                  title: '棒球',
-                  regularEvents: '美國職業棒球大聯盟、中華職業棒球大聯盟、日本野球機構、韓國職棒（KBO聯賽）、澳洲棒球聯盟',
-                  nonRoutineEvents: '加勒比海大賽、美日職棒大賽、世界棒球經典賽、亞洲職棒大賽'
-               },
-               {
-                  title: '足球',
-                  regularEvents: '英格蘭足球超級聯賽（英超）、德國足球甲級聯賽（德甲）、西班牙足球甲級聯賽（西甲）、義大利足球甲級聯賽（義甲）、法國足球甲級聯賽（法甲）、日本J聯盟、澳洲A聯盟、美國職業足球大聯盟（MLS）',
-                  nonRoutineEvents: '國際足球總會世界盃（世界盃）、欧洲足球锦标赛（歐洲盃）、奧林匹克運動會（奧運）'
-               },
-               {
-                  title: '網球',
-                  regularEvents: '澳洲網球公開賽（澳網）、法國網球公開賽（法網）、溫布頓網球錦標賽（溫布頓）、美國網球公開賽（美網）',
-                  nonRoutineEvents: '奧林匹克運動會（奧運）'
-               },
-               {
-                  title: '冰球',
-                  regularEvents: '國家冰球聯盟、大陸冰球聯盟',
-                  nonRoutineEvents: '冬季奧林匹克運動會（冬奧）'
-               },
-               {
-                  title: '美式足球',
-                  regularEvents: '國家美式足球聯盟',
-                  nonRoutineEvents: '冬季奧林匹克運動會（冬奧）'
-               },
-               {
-                  title: '排球',
-                  regularEvents: '巴西超級聯賽、義大利超級聯賽、波蘭超級聯賽、日本V1聯賽、南韓V聯賽、國家聯賽',
-                  nonRoutineEvents: '奧林匹克運動會（奧運）'
-               },
-               {
-                  title: '羽球',
-                  regularEvents: '世羽聯Grade 2等級1~等級4賽事',
-                  nonRoutineEvents: '世界羽聯世界錦標賽（世錦賽）、奧林匹克運動會（奧運）'
-               },
-               {
-                  title: '高爾夫',
-                  regularEvents: '男子職業高爾夫球四大賽（美國名人賽、美國公開賽、英國公開賽、PGA錦標賽）女子職業高爾夫球五大賽（全日空錦標賽、LPGA錦標賽、美國女子公開賽、英國女子公開賽、愛維養錦標賽）',
-                  nonRoutineEvents: '奧林匹克運動會（奧運）'
-               },
-               {
-                  title: '撞球',
-                  regularEvents: '中國公開賽、安麗益之源盃',
-                  nonRoutineEvents: ''
-               },
-               {
-                  title: '賽車',
-                  regularEvents: '一級方程式賽車F1、世界摩托車錦標賽MotoGP',
-                  nonRoutineEvents: ''
-               },
-               {
-                  title: '電子競技',
-                  regularEvents: '英雄聯盟',
-                  nonRoutineEvents: ''
-               },
-            ],
-            analyzelottery1: [
-               {
-                  data: '運動彩券最迷人的地方，莫過於玩家可以通過賽前資訊的掌握和分析，提高自身投注的勝算。事實上，會影響體育賽事的因素有很多（例如氣候、球員狀態）；運彩分析之所以如此重要，主要原因在於任何一種運動賽事都是「有跡可循的」。如果玩家連球隊的實力、主客場影響、賽事規則等基礎知識都一竅不通，而且也沒有作任何運彩分析，就算贏了也純屬運氣好而已。',
-                  imgUrl: '../images/lotterygame/lotteryanalyze/lotteryanalyze1.jpg'
-               },
-            ],
-            analyzelottery2: [
-               {
-                  title: '運彩分析的重要性',
-                  data: '事實上，運動彩券並非純粹靠運氣的博弈遊戲，而是一種將各方龐大數據和資料整合起來，再進一步推算和分析的投資方式。舉凡球隊戰績、傷兵名單、上下半場和全場的歷史數據紀錄、各項玩法的歷史紀錄等——要每個玩家都一一牢記的話，實在強人所難，這時候靠專業的運彩分析專家或網站會相對輕鬆許多。',
-                  imgUrl: '../images/lotterygame/lotteryanalyze/lotteryanalyze2.jpg'
-               },{
-                  data:'任何人去買台灣運彩，無非都是抱著贏錢的目的去投注。不過人人都要贏錢，卻不是所有人都懂得運彩分析，有些剛入門運彩的玩家甚至連怎麼下注都不知道。雖然網路充斥各種運彩分析資訊，自稱專業可靠的運彩分析網站比比皆是，那麼到底哪個運彩網站的可信度最高呢？'
-               },{
-                  data:'要分辨專家或是騙子，第一個可以排除的，就是沒有任何評論網站，只有一昧報明牌的網站。其實運彩分析就和投資股票一樣，檯面上有很多投資大師都說自己在幾天內賺了多少錢，然而對自己虧了多少閉口不提。要是你在網路上找到一家運彩分析網站，內容完全沒有提到任何的賽事評論，只會重複強調自己贏幾場、賺多少錢，奉勸你還是不要相信比較好。'
-               }
-            ],
-            analyzelottery3: [
-               {
-                  title: '為什麼需要運彩分析',
-                  data: '所謂知己知彼，百戰百勝，台灣運彩官網上開放投注的體育賽事，通常都持續長達半年以上的時間；如果能利用專業的運彩分析文章所提供的各類賽事以及盤口分析，不但可以替玩家省下大量時間與精力，還能透過閱讀運彩分析文章，迅速累積對各種賽事成績的評估能力，使自身分析準確率得以提升。',
-                  imgUrl: '../images/lotterygame/lotteryanalyze/lotteryanalyze3.jpg'
-               },{
-                  data:'運彩分析網站上的資訊都是長時間有系統性被整理出來的，主要目的是希望玩家可以透過簡單易懂的運彩分析文，協助玩家更精準地投注每場比賽，將每一分血汗錢都創造出更大的效益。如果玩家都看得懂球賽，也認識球隊、球員、球場等任何可以幫玩家增加勝率的資訊，基本上你對運動彩券會更有信心。'
-               },{
-                  data:'雖然龐大的資訊量並不能保證玩家肯定可以贏錢，但就好比玩股票一樣，掌握越多資訊越好，聰明的投資者總是先了解投資項目的基本資料後，才會開始擬定策略、設定預算，最後才決定要投入多少金額。'
-               },{
-                  data:'目前台灣具有參考價值的運彩分析網站，舉例「玩運彩」、「運彩小偉」、「運彩報馬仔」，都是累積了一定數量的分析文章，而且這些文章都是由專業體育分析師撰寫的，並在各大新聞網站或報紙的體育版設有專欄，文章品質算是有一定的水準保證。'
-               }
-            ],
-            analyzelottery4: [
-               {
-                  title: '玩運彩',
-                  data: '「玩運彩」成立於2009年2月24日，至今已有13年的歷史。這是一個由熱愛體育賽事以及運彩愛好者聚集而成的社群平台，也是目前台灣規模最大的運動彩券社群網站。「玩運彩」提供了各種類體育賽事的評論、即時比分分析、賽事預測等服務，其創辦人還有被媒體報導過，算是台灣運彩分析的老字號。',
-                  imgUrl: '../images/lotterygame/lotteryanalyze/lotteryanalyze4.jpg'
-               },{
-                  title:'運彩報馬仔',
-                  data:'「運彩報馬仔」是一個專門分析運彩投注的平台，特別專注在NBA美國職籃。這個運彩分析平台擁有NBA完整的球員及球隊賽事紀錄，以及全部賽事盤口資訊。無論是剛接觸運彩想找明牌的運彩迷，或是想嘗試自己作運彩分析的玩家，「運彩報馬仔」會是一個很適合的平台。',
-                  imgUrl: '../images/lotterygame/lotteryanalyze/lotteryanalyze5.jpg'
-               },{
-                  title:'運彩小偉',
-                  data:'「運彩小偉」是一位熱心又專業的運彩分析師，目前在中華民國運動賽事分析師協會擔任重要職務，負責教育新進成員及研習營講師。「運彩小偉」網站是他正職之餘經營的一個運彩分析網站，主要提供的資訊包括各種運動賽事的運彩分析（台灣運彩盤）、運彩博弈相關技巧以及運彩相關資訊，同時也會不時分享個人球衣收藏及相關資訊。',
-                  imgUrl: '../images/lotterygame/lotteryanalyze/lotteryanalyze6.jpg'
-                  
-               },{
-                  data:'「運彩小偉」目前分析的運動賽事包括足球（英超、德甲、義甲、法甲、西甲及各大盃賽）、籃球（NBA）、棒球（MLB）、冰球（NHL）、網球（男網大小賽事）、美式足球（NFL）、電競（英雄聯盟LOL、LPL）。目前他在TSNA設有NBA專欄，在FB、YouTube上也很活躍。'
-               },
-               {
-                  data:'上述運彩分析網站均有介紹運彩的基礎知識與專業名詞，讓玩家在下注之前可先掌握一些實用資訊。一般運彩新手玩家最在意押注可以贏多少錢，即「盤口」與「賠率」。'
-               },{
-                  data:'「盤口」是運彩公司為了補足比賽雙方實力差距而向民眾公開的數據，目的是讓比賽兩隊贏得比賽的勝率盡量維持各50%。為了讓玩家願意花錢投注弱隊，運彩公司必須提供「賠率」，讓玩家獲得更大的利益。'
-               }
-            ],
-            analyzelottery5: [
-               {
-                  data: '上述三個運彩分析網站都有各自擅長的領域，例如「運彩小偉」是TSNA 體育新聞團隊的NBA專欄作者，他專門分享NBA賽事分析、擔任賽事球評，也會固定產出NBA的運彩分析文，且文章品質都有一定的水準。他在自己經營的網站中特別分享了NBA「十大心法」，幫助各位玩家提高勝算：',
-                  imgUrl: '../images/lotterygame/lotteryanalyze/lotteryanalyze7.jpg'
-               },{
-                  title:'傷勢',
-                  data:'眾所皆知，籃球是一種高強度的運動。NBA職業賽事長達半年，每支隊伍要打82場比賽，在頻密出戰的情況下，球員受傷在所難免；如果該球隊的主力球員因受傷而無法出場時，就算該球隊戰績名列前茅，基本上整體戰力還是會大打折扣。運彩分析師通常會依據NBA球隊出賽名單和球隊公告來判斷主力會不會上場、上場球員的狀況，畢竟這些因素對盤分影響很大。',
-               },{
-                  title:'各隊伍粉絲專欄（FB粉絲頁或「運動視界」）',
-                  data:'NBA官方將台灣視為亞洲重要市場之一，證明許多台灣人熱衷於NBA，尤其鐵粉特別愛關注自己支持之球隊的大小事，包括當天賽事戰況、球員動向、制服組動作、外電報導及個人評論等。玩家可定期瀏覽球隊的粉絲專頁，或到運彩分析網站逛逛，這將有助於解讀賽事資訊，而更進階的作法則是閱讀各隊伍的隨隊記者報導，或是國外寫手的文章。',
-               },{
-                  title:'NBA2K數據',
-                  data:'《NBA2K》是一款以美國國家籃球協會聯盟為主題的籃球遊戲，球員能力值會依真實世界的比賽數據而有所變動。許多球員相當看重《NBA2K》遊戲裡的自己能力值有多高，甚至有些球員本身就是重度2K玩家。建議玩家在進行運彩分析時，可以關注《NBA2K》球員的表現，可以當作運彩下注的參考指標之一。'
-               },
-               {
-                  title:'主客場和賽程',
-                  data:'由於NBA賽季長達6個月，球隊會針對不同賽程進行球員輪替，加上運彩公司針對球隊的主客場制開出不同的盤口（例如主場優勢），建議玩家將背靠背賽程、連續客場征戰、連續面對強隊、主力球員老化輪休、是否為全國轉播等事項，列入運彩分析重點。'
-               },{
-                  title:'薪資合約',
-                  data:'薪資合約對籃球員來說影響甚大，大多選手會在合約年（續約當年）力求表現，爭取更優渥的合約。玩家在投注之前，可將球隊的薪資結構當作運彩分析重點之一，先了解主力球員的薪資合約與個人狀況。若球員想要拚大約，只一昧在乎自己的表現，有可能會影響球隊的整體表現與穩定性。'
-               },{
-                  title:'時間點',
-                  data:'NBA賽季會分成幾個時段，每個時段又可以用不同的運彩分析角度去推測賽事結果；例如NBA剛開季的時候，每支球隊都還在磨合默契、適應教練打法，對戰績勝負的重視度會相對低一些。等到後期要爭奪季後賽席次時，球隊就會卯足全力拼晉級；無緣晉級的球隊則會放眼明年，先派一些潛力球員上場累積經驗。這就是NBA不能用同一策略分析整季賽事的原因。'
-               },{
-                  title:'盤口資訊',
-                  data:'有些玩家喜歡看盤口的趨勢，或者各國盤口的差異，作為投注哪支球隊的參考依據。不過這種資訊不一定準確，可信度待質疑，建議玩家僅作輔助參考就好。'
-               },{
-                  title:'數據',
-                  data:'所有運彩分析的基本功夫都離不開球隊的出戰紀錄，通常是先看球隊數據，之後在看個別球員的過往表現。不過龐大的資訊量要分析起來相當耗時間，要是沒時間自己研究的話，不妨參考「運彩小偉」網站的資訊。'
-               },{
-                  title:'隊伍目標方針',
-                  data:'球隊實力會影響當季球隊的整體方針，強隊想爭冠、弱隊要累積實力。「運彩小偉」特別提醒玩家，別去參考之前的數據，畢竟NBA賽事變化極快——上一季還在爭冠，下一季球隊可能就要重建了；建議玩家累積當季約10~20場數據後再作運彩分析。'
-               },{
-                  title:'比賽',
-                  data:'既然要投注喜歡球隊，怎麼可以不看投注的賽事呢？要是沒有時間看完全場比賽，現在YouTube上有很多賽事重播的影片，有些媒體甚至已經剪出精華版。看重播也一樣能清楚知道球員近況，例如傷後復出的主力球員狀態如何，藉此判斷整體球隊的戰力。'
-               },{
-                  data:'相信大家現在對運彩分析有一定的了解對吧？專業的運彩分析文可提供玩家實質性的幫助，讓玩家可以根據過去的賽事狀況和球隊數據，決定自己的投注策略。不過在此要提醒各位玩家，每場賽事都存在變數，大家可以相信數據，但不要迷信，否則期望越大，失望更大。'
-               }
+            analyzelottery5: [{
+               data: '上述三個運彩分析網站都有各自擅長的領域，例如「運彩小偉」是TSNA 體育新聞團隊的NBA專欄作者，他專門分享NBA賽事分析、擔任賽事球評，也會固定產出NBA的運彩分析文，且文章品質都有一定的水準。他在自己經營的網站中特別分享了NBA「十大心法」，幫助各位玩家提高勝算：',
+               imgUrl: '../images/lotterygame/lotteryanalyze/lotteryanalyze7.jpg'
+            }, {
+               title: '傷勢',
+               data: '眾所皆知，籃球是一種高強度的運動。NBA職業賽事長達半年，每支隊伍要打82場比賽，在頻密出戰的情況下，球員受傷在所難免；如果該球隊的主力球員因受傷而無法出場時，就算該球隊戰績名列前茅，基本上整體戰力還是會大打折扣。運彩分析師通常會依據NBA球隊出賽名單和球隊公告來判斷主力會不會上場、上場球員的狀況，畢竟這些因素對盤分影響很大。',
+            }, {
+               title: '各隊伍粉絲專欄（FB粉絲頁或「運動視界」）',
+               data: 'NBA官方將台灣視為亞洲重要市場之一，證明許多台灣人熱衷於NBA，尤其鐵粉特別愛關注自己支持之球隊的大小事，包括當天賽事戰況、球員動向、制服組動作、外電報導及個人評論等。玩家可定期瀏覽球隊的粉絲專頁，或到運彩分析網站逛逛，這將有助於解讀賽事資訊，而更進階的作法則是閱讀各隊伍的隨隊記者報導，或是國外寫手的文章。',
+            }, {
+               title: 'NBA2K數據',
+               data: '《NBA2K》是一款以美國國家籃球協會聯盟為主題的籃球遊戲，球員能力值會依真實世界的比賽數據而有所變動。許多球員相當看重《NBA2K》遊戲裡的自己能力值有多高，甚至有些球員本身就是重度2K玩家。建議玩家在進行運彩分析時，可以關注《NBA2K》球員的表現，可以當作運彩下注的參考指標之一。'
+            },
+            {
+               title: '主客場和賽程',
+               data: '由於NBA賽季長達6個月，球隊會針對不同賽程進行球員輪替，加上運彩公司針對球隊的主客場制開出不同的盤口（例如主場優勢），建議玩家將背靠背賽程、連續客場征戰、連續面對強隊、主力球員老化輪休、是否為全國轉播等事項，列入運彩分析重點。'
+            }, {
+               title: '薪資合約',
+               data: '薪資合約對籃球員來說影響甚大，大多選手會在合約年（續約當年）力求表現，爭取更優渥的合約。玩家在投注之前，可將球隊的薪資結構當作運彩分析重點之一，先了解主力球員的薪資合約與個人狀況。若球員想要拚大約，只一昧在乎自己的表現，有可能會影響球隊的整體表現與穩定性。'
+            }, {
+               title: '時間點',
+               data: 'NBA賽季會分成幾個時段，每個時段又可以用不同的運彩分析角度去推測賽事結果；例如NBA剛開季的時候，每支球隊都還在磨合默契、適應教練打法，對戰績勝負的重視度會相對低一些。等到後期要爭奪季後賽席次時，球隊就會卯足全力拼晉級；無緣晉級的球隊則會放眼明年，先派一些潛力球員上場累積經驗。這就是NBA不能用同一策略分析整季賽事的原因。'
+            }, {
+               title: '盤口資訊',
+               data: '有些玩家喜歡看盤口的趨勢，或者各國盤口的差異，作為投注哪支球隊的參考依據。不過這種資訊不一定準確，可信度待質疑，建議玩家僅作輔助參考就好。'
+            }, {
+               title: '數據',
+               data: '所有運彩分析的基本功夫都離不開球隊的出戰紀錄，通常是先看球隊數據，之後在看個別球員的過往表現。不過龐大的資訊量要分析起來相當耗時間，要是沒時間自己研究的話，不妨參考「運彩小偉」網站的資訊。'
+            }, {
+               title: '隊伍目標方針',
+               data: '球隊實力會影響當季球隊的整體方針，強隊想爭冠、弱隊要累積實力。「運彩小偉」特別提醒玩家，別去參考之前的數據，畢竟NBA賽事變化極快——上一季還在爭冠，下一季球隊可能就要重建了；建議玩家累積當季約10~20場數據後再作運彩分析。'
+            }, {
+               title: '比賽',
+               data: '既然要投注喜歡球隊，怎麼可以不看投注的賽事呢？要是沒有時間看完全場比賽，現在YouTube上有很多賽事重播的影片，有些媒體甚至已經剪出精華版。看重播也一樣能清楚知道球員近況，例如傷後復出的主力球員狀態如何，藉此判斷整體球隊的戰力。'
+            }, {
+               data: '相信大家現在對運彩分析有一定的了解對吧？專業的運彩分析文可提供玩家實質性的幫助，讓玩家可以根據過去的賽事狀況和球隊數據，決定自己的投注策略。不過在此要提醒各位玩家，每場賽事都存在變數，大家可以相信數據，但不要迷信，否則期望越大，失望更大。'
+            }
             ]
          }
       },
       methods: {
          toogleShareArticle(title) {
             this.showShareArticle = title;
-            console.log(this.showShareArticle);
          },
          tooglePage(id) {
-            console.log(id);
             window.sessionStorage.setItem('data', id)
             if (sessionStorage.getItem('data') == null) {
                this.showData = 'homeData'
@@ -767,9 +771,9 @@
                this.showData = 'Question'
             } else if (sessionStorage.getItem('data') == 'lottery') {
                this.showData = 'lottery'
-            } else if( sessionStorage.getItem('data') == 'analyzelottery'){
+            } else if (sessionStorage.getItem('data') == 'analyzelottery') {
                this.showData = 'analyzelottery'
-            }else if (sessionStorage.getItem('data') == 'shareArticle') {
+            } else if (sessionStorage.getItem('data') == 'shareArticle') {
                window.location.href = "../case/shareArticle.html"
             } else if (sessionStorage.getItem('data') == 'Baccarat') {
                window.location.href = "../case/Baccarat.html"

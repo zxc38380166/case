@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>娛樂城分享</title>
-    <link rel="stylesheet" type="text/css" href="shareArticleStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/homeStyle.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-        crossorigin="anonymous"></script>
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+        </script>
     <script src="https://unpkg.com/vue@next"></script>
 </head>
+
 <body>
     <div id="app">
         <Sidebar></Sidebar>
@@ -21,9 +22,13 @@
             <div style="width:10%"></div>
             <div style="width: 80%; " class="d-flex justify-content-center">
                 <!-- logo -->
-                <a href="javascript:void(0)" style="width: 15%;" class="logo-img img-Universal d-none d-xl-block"></a>
+                <a @click="tooglePage('homeData')" href="javascript:void(0)" style="width: 25%"
+                    class=" d-none d-xl-block ">
+                    <img src="../images\logo\logo_ezcvc2_c_scale,w_600.png" style="width: 250px;height: 100%;" alt="">
+                </a>
                 <!-- navbarImg -->
-                <a href="javascript:void(0)" style="width: 75%;" class="navbar-img img-Universal ms-4"></a>
+                <a href="javascript:void(0)" style="width: 65%;" class="ms-4">
+                </a>
                 <!-- 側欄選單 -->
                 <a href="javascript:void(0)" style="width: 10%;" class="mt-3">
                     <button @click="menuShow=true" type="button" class="btn ">
@@ -33,7 +38,8 @@
                                 d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
                         </svg>
                     </button>
-                    <div v-if="menuShow" class="menu flex-column d-flex justify-content-center align-items-center">
+                    <div v-if="menuShow"
+                        class="menu navbar-Y flex-column d-flex justify-content-center align-items-center">
                         <div @click="menuShow=false" class="fs-3 text-danger ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                 class="mx-1 bi bi-x-square" viewBox="0 0 16 16">
@@ -42,8 +48,9 @@
                                 <path
                                     d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                             </svg>Close Menu
+                            <img draggable="false" src="../images\logo\logo_ezcvc2_c_scale,w_600.png" style="width: 75%"
+                                class="py-3" @click="tooglePage('homeData')">
                         </div>
-                        <div class="img-Universal logo-img my-2 w-75"></div>
                         <div class="w-75 py-2" v-for="item in menuData">
                             <button @click="tooglePage(item.anchorId)" id="aee" type="button"
                                 class="btn w-100 btn-outline-secondary">
@@ -56,10 +63,9 @@
             </div>
             <div style="width:10%"></div>
         </div>
+
         <div :class="{'remove-background':menuShow}" @click="menuShow=false"></div>
         <div class="text d-flex justify-content-center text-center">
-            <div style="width:10%">
-            </div>
             <div style="width:80%">
                 <p class="fw-bold fs-2 pt-5">線上百家樂開箱<br>百家樂遊戲規則、玩法技巧不藏私分享</p>
                 <p>娛樂城/百家樂</p>
@@ -156,15 +162,17 @@
                         </div>
                     </div>
                 </div>
-                <p class="fw-bold fs-3">百家樂平台開箱 <br> SA Gaming沙龍百家樂</p>
+                <p id="BaccaratGamePlatform" class="fw-bold fs-3">百家樂平台開箱</p>
+                <p id="SalonBaccarat" class="fw-bold fs-3">SA Gaming沙龍百家樂</p>
                 <div v-for="item in baccaratData5">
                     <p class="fw-bold fs-4">{{item.title}}</p>
                     <p class="fs-5">{{item.data}}</p>
                 </div>
                 <div class="card my-2" style="width: 100%;">
-                    <img src="../images/indexbanner/banner0518_muai1i_c_scale,w_1368.jpg" class="card-img-top" alt="...">
+                    <img src="../images/indexbanner/banner0518_muai1i_c_scale,w_1368.jpg" class="card-img-top"
+                        alt="...">
                     <div class="card-body">
-                        <p class="fw-bold fs-3">Allbet歐博真人百家樂</p>
+                        <p id="OberLiveBaccarat" class="fw-bold fs-3">Allbet歐博真人百家樂</p>
                         <div v-for="item in baccaratData6">
                             <p class="fw-bold fs-4">{{item.title}}</p>
                             <p class="fs-5">{{item.data}}</p>
@@ -174,33 +182,281 @@
                 <div class="card my-2" style="width: 100%;">
                     <img src="../images/indexbanner/p08_x39fvv_c_scale,w_1300.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="fw-bold fs-3">DG(Dream Gaming)真人百家樂</p>
+                        <p id="DGLiveBaccarat" class="fw-bold fs-3">DG(Dream Gaming)真人百家樂</p>
                         <div v-for="item in baccaratData7">
                             <p class="fw-bold fs-4">{{item.title}}</p>
-                            <p class="fs-5" >{{item.data}}</p>
+                            <p class="fs-5">{{item.data}}</p>
                         </div>
                     </div>
                 </div>
                 <div class="card my-2" style="width: 100%;">
                     <img src="../images/banner/banner.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="fw-bold fs-3">WM真人百家樂</p>
+                        <p id="WMLiveBaccarat" class="fw-bold fs-3">WM真人百家樂</p>
                         <div class="fs-5" v-for="item in baccaratData8">
                             <p class="fw-bold fs-4">{{item.title}}</p>
-                            <p class="fs-6">{{item.data}}</p>
+                            <p class="fs-5">{{item.data}}</p>
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div v-for="item in baccaratData9" class="col pt-2">
+                        <div class="card text-dark bg-light mb-3 h-100">
+                            <div id="BaccaratGameRules" class="card-header text-danger fw-bold fs-3">{{item.title}}
+                            </div>
+                            <div class="card-body">
+                                <div v-for="item2 in item.data" class="card-text">
+                                    {{item2.text}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 pt-3">
+                        <div class="card text-dark bg-light mb-3">
+                            <div id="BaccaratCompensationBoRules" class="card-header text-danger fw-bold fs-3">
+                                百家樂補(博)牌規則
+                            </div>
+                            <div class="card-body">
+                                <div v-for="item in baccaratData10">
+                                    <p class="card-title fw-bold fs-4">{{item.title}}</p>
+                                    <p class="card-text fs-5">{{item.data}}</p>
+                                </div>
+                                <table class="table my-3 table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">閒家</th>
+                                            <th scope="col">前2張牌 點數總計</th>
+                                            <th scope="col">莊家</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>補牌</td>
+                                            <td>0</td>
+                                            <td>補牌</td>
+                                        </tr>
+                                        <tr>
+                                            <td>補牌</td>
+                                            <td>1</td>
+                                            <td>補牌</td>
+                                        </tr>
+                                        <tr>
+                                            <td>補牌</td>
+                                            <td>2</td>
+                                            <td>補牌</td>
+                                        </tr>
+                                        <tr>
+                                            <td>補牌</td>
+                                            <td>3</td>
+                                            <td>閒家睇3張牌：8，莊家不補牌</td>
+                                        </tr>
+                                        <tr>
+                                            <td>補牌</td>
+                                            <td>4</td>
+                                            <td>閒家睇3張牌：1,8,9,0，莊家不補牌</td>
+                                        </tr>
+                                        <tr>
+                                            <td>補牌</td>
+                                            <td>5</td>
+                                            <td>閒家睇3張牌：1,2,3,8,9,0，莊家不補牌</td>
+                                        </tr>
+                                        <tr>
+                                            <td>莊家點數0~5，莊家補第三張牌閒家不補</td>
+                                            <td>6</td>
+                                            <td>閒家睇3張牌：6,7，莊家補牌</td>
+                                        </tr>
+                                        <tr>
+                                            <td>莊家點數6~7，莊家補第三張牌閒家不補</td>
+                                            <td>7</td>
+                                            <td>不補</td>
+                                        </tr>
+                                        <tr>
+                                            <td>定勝負</td>
+                                            <td>8</td>
+                                            <td>定勝負</td>
+                                        </tr>
+                                        <tr>
+                                            <td>定勝負</td>
+                                            <td>9</td>
+                                            <td>定勝負</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-2" style="width: 100%">
+                    <p id="BaccaratBettingTips" class="fw-bold fs-3">百家樂投注技巧</p>
+                    <div v-for="item in baccaratData11">
+                        <p :id="item.anchorId" class="fw-bold fs-4"> {{item.anchorId}} {{item.title}}</p>
+                        <p class="fs-5">{{item.data}}</p>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">局數</th>
+                                    <th scope="col">下注籌碼</th>
+                                    <th scope="col">結果</th>
+                                    <th scope="col">演算法規則</th>
+                                    <th scope="col">目前序列</th>
+                                    <th scope="col">目前利潤</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>5</td>
+                                    <td>輸</td>
+                                    <td>添加5到序列</td>
+                                    <td>1,2,3,4,5</td>
+                                    <td>-5</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>1+5=6</td>
+                                    <td>輸</td>
+                                    <td>添加6到序列</td>
+                                    <td>1,2,3,4,5,6</td>
+                                    <td>-11</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>1+6=7</td>
+                                    <td>贏</td>
+                                    <td>去除頭尾1和6</td>
+                                    <td>2,3,4,5</td>
+                                    <td>-4</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>2+5=7</td>
+                                    <td>輸</td>
+                                    <td>添加7到序列</td>
+                                    <td>2,3,4,5,7</td>
+                                    <td>-11</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>2+7=9</td>
+                                    <td>輸</td>
+                                    <td>添加9到序列</td>
+                                    <td>2,3,4,5,7,9</td>
+                                    <td>-20</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>2+9=11</td>
+                                    <td>贏</td>
+                                    <td>去除頭尾2和9</td>
+                                    <td>3,4,5,7</td>
+                                    <td>-9</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>3+7=10</td>
+                                    <td>贏</td>
+                                    <td>添加10到序列</td>
+                                    <td>4,5</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>4+5=9</td>
+                                    <td>贏</td>
+                                    <td>添加9到序列</td>
+                                    <td>4,9</td>
+                                    <td>-8</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>4+9=13</td>
+                                    <td>贏</td>
+                                    <td>消去4和9</td>
+                                    <td>–</td>
+                                    <td>+5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="my-2">
+                    <p id="BaccaratBettingRules" class="fs-4 fw-bold">百家樂投注規則</p>
+                    <div v-for="item in baccaratData12">
+                        <p class="fs-5">{{item.data}}</p>
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">下注莊家、莊家贏</th>
+                                <th scope="col"> 2種玩法：
+                                    ．買1賠0.95（扣5%佣金給莊家）
+                                    ．買1賠1(免佣，但若以6點勝出賠率為1賠0.5)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>下注閒家、閒家贏</td>
+                                <td>買1賠1</td>
+                            </tr>
+                            <tr>
+                                <td>下注和局</td>
+                                <td>買1賠8</td>
+                            </tr>
+                            <tr>
+                                <td>下注莊對子</td>
+                                <td>買1賠11</td>
+                            </tr>
+                            <tr>
+                                <td>下注閒對子</td>
+                                <td>買1賠11</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <p style="height: 200px;" class="card-text fs-2 py-2"><small class="text-muted">{{ title }}</small></p>
+                <div style="width:10%">
+                    <div class="top-align" @click="anchorFocus('app')">
+                        <button type="button" class="btn btn-outline-secondary"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="20" height="30" fill="currentColor" class="bi bi-chevron-double-up"
+                                viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z" />
+                                <path fill-rule="evenodd"
+                                    d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                            </svg>
+                            <br>Top
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div style="width:10%"></div>
         </div>
-    </div>
 </body>
 
 </html>
+<style>
+</style>
 <script>
-
+   document.onkeydown = function () {
+      if (window.event && window.event.keyCode == 123) {
+         //F12禁用
+         event.keyCode = 0;
+         event.returnValue = false;
+      }
+      if (window.event && window.event.keyCode == 13) {
+         window.event.keyCode = 505;
+      }
+      if (window.event && window.event.keyCode == 8) {
+         alert(str + "\n请使用Del键进行字符的删除操作！");
+         window.event.returnValue = false;
+      }
+   }
+   document.oncontextmenu = function () {
+      window.event.returnValue = false; //滑鼠右鍵禁用
+   }
     const app = Vue.createApp({
         data() {
             return {
@@ -208,7 +464,7 @@
                 showData: 'homeData',
                 showShareArticle: 'dg百家樂娛樂城推薦',
                 menuShow: false,
-                buttonList: [     //按鈕列表
+                buttonList: [ //按鈕列表
                     {
                         data: '登入',
                         color: 'success'
@@ -220,226 +476,435 @@
                         color: 'danger'
                     }
                 ],
-                menuData: [   //Menu欄資料 
+                menuData: [ //Menu欄資料 
                     {
                         data: '返回首頁',
-                        anchorId: 'app'
+                        anchorId: 'homeData'
                     }, {
                         data: '百家樂遊戲平台',
-                        anchorId: ''
+                        anchorId: 'BaccaratGamePlatform'
                     }, {
                         data: 'SA Gaming沙龍百家樂',
-                        anchorId: ''
+                        anchorId: 'SalonBaccarat'
                     }, {
                         data: 'Allbet歐博真人百家樂',
-                        anchorId: ''
+                        anchorId: 'OberLiveBaccarat'
                     }, {
                         data: 'DG真人百家樂',
-                        anchorId: ''
+                        anchorId: 'DGLiveBaccarat'
                     }, {
                         data: 'WM真人百家樂',
-                        anchorId: ''
+                        anchorId: 'WMLiveBaccarat'
                     }, {
                         data: '百家樂遊戲規則',
-                        anchorId: ''
+                        anchorId: 'BaccaratGameRules'
                     }, {
                         data: '百家樂點數計算',
-                        anchorId: '',
+                        anchorId: 'BaccaratGameRules',
                     }, {
-                        data: '百家樂投注技巧',
-                        anchorId: ''
+                        data: '百家樂補(博)牌規則',
+                        anchorId: 'BaccaratCompensationBoRules'
                     }, {
                         data: 'MARTINGALE投注法',
-                        anchorId: ''
+                        anchorId: 'MARTINGALEBettingMethod'
                     }, {
                         data: '1-2-3投注法',
-                        anchorId: ''
+                        anchorId: '123BettingMethod'
                     }, {
                         data: 'PAROLI投注法',
-                        anchorId: ''
+                        anchorId: 'PAROLIBettingMethod'
                     }, {
                         data: '雷伯切爾投注法',
-                        anchorId: ''
+                        anchorId: 'RabchelBettingMethod'
                     }, {
                         data: '百家樂投注規則',
-                        anchorId: ''
+                        anchorId: 'BaccaratBettingRules'
                     }, {
                         data: '百家樂文章分享',
-                        anchorId: ''
+                        anchorId: 'BaccaratShareArticle'
                     },
                 ],
-                baccaratData1: [
-                    {
-                        data: '百家樂可以說不管是線上娛樂城或是實體賭場最經典的博奕遊戲之一，受惠於科技技術的進步，現今的玩家們已經用不著實際走進賭場才能參與百家樂對戰，只要手機或電腦，就能玩到超高度擬真與完美還原賭場現況的線上真人百家樂遊戲。'
-                    }, {
-                        data: '但無論是哪一家線上真人百家樂系統，其實都主打著美女荷官，保有真人親切互動，並搭配全方位無死角的高畫質攝影鏡頭，讓玩家就算是線上參與百家樂遊戲，整場賭局還是能保持公平、公正、公開與透明的特性，不分資深或新手玩家也都能百分百安心擁有超越真實賭場的遊戲體驗，享受極致奢華的VIP服務。'
-                    }, {
-                        data: '而本站為將百家樂遊戲做更好的推廣，獨家開箱介紹目前累積最多玩家的四大真人百家樂遊戲系統，包含SA Gaming沙龍百家樂、Allbet歐博真人百家樂、DG(Dream Gaming)真人百家樂和WM真人百家樂等四款知名百家樂平台，一次公開平台的遊戲介面與操作流程，並藉由基礎的百家樂遊戲規則與更多玩法技巧的分享，不只讓你能夠撥開百家樂神秘的面紗，更帶領你成為百家樂的遊戲高手，想提升自身的百家樂勝率嗎？本站一整套的百家樂實戰教學不藏私分享，非常值得你研讀。'
-                    },
-                ],
-                baccaratData2: [
-                    {
-                        data: '受到百家樂問世時間較早，加上百家樂也一直都是各家娛樂城主推的遊戲項目，所以其受矚目的程度可說是非常驚人，每一年參與百家樂的人數也是不斷在增加，相對的讓許多平台無不爭先恐後的推出，目的就是希望能夠分食百家樂這塊市場，而，攤開網上這麼多間的平台，我們又應該如何選擇呢？'
-                    }, {
-                        data: '其實想挑選合適的百家樂遊戲場域，還是需要先選擇優質的娛樂城平台，各家娛樂城所推出的優惠內容也許大同小異，這時就該選擇具口碑、聲譽佳的娛樂城了，而本站所推薦的GS娛樂城百家樂，不只針對新手玩家首次儲值釋放了儲值1,000即送1,000的優惠方案，對於好友推薦成功，一人還可現領300的優惠回饋，而且沒有人數上限，著實非常的佛心，你能真切的感受到平台的誠意，就算讀者最終不是選擇GS娛樂城，其實保持著幾個特點就是，平台本身具有口碑與聲譽、對於百家樂遊戲可能有相對應的優惠或是平台提供的遊戲體驗相當的不錯，保持這幾個原則，就能挑選到合適的百家樂平台了。'
-                    }
-                ],
-                baccaratData3: [
-                    {
-                        data: '你會不會好奇，百家樂這麼受到歡迎，它真的適合每一個人嗎？誰才適合玩百家樂呢？而其實，百家樂就是一款娛樂遊戲，所以並沒有所謂誰才適合玩，換句話說，只要有興趣，人人都可以嘗試去遊玩百家樂，但取決於每個人進入百家樂的目的不同，有些人可能單純的想打發時間，有些人則是希望可以從百家樂獲得更多的額外獎勵，當然你的心態也就影響著用什麼樣的方法去玩百家樂了。'
-                    }, {
-                        data: '我們可以從三個面向來探討，如果你是一個初入百家樂的菜鳥，可能對於百家樂的規則與遊戲流程還不是那麼熟悉，或是你可能只是單純想要打發時間，那麼你可能只需要好好搞懂百家樂的遊戲規則，包含百家樂如何計算點數、如何補牌以及百家樂如何下注等，熟悉有關遊戲的一切資訊，你就可以盡情的享受過程的刺激。'
-                    }, {
-                        data: '而如果你雖然還只是一個百家樂的新手，但你的目標是希望藉由百家樂的遊戲過程中，去獲得更多額外的回饋，那你不只是認識遊戲規則，將需要更了解百家樂的投注技巧，包含百家樂在什麼樣的情況下可以有的下注策略，或是百家樂有沒有什麼樣的預測方法等，同時，更多的實戰練習也是此階段的你最需要的部分。'
-                    }, {
-                        data: '當然對於身經百戰的資深玩家，百家樂的一切你可能都已經瞭若指掌，會影響你勝負的就是臨場狀況了，你是否可以冷靜沉著的面對每一次不利的局面，藉由更好的思考判斷該下的決策，除此之外，也建議此階段的玩家，學會做好每一次進入百家樂遊戲前的止損目標，不只可以享受到百家樂對戰的刺激感，還能盡可能的保有獲利的可能。'
-                    }
-                ],
-                baccaratData4: [
-                    {
-                        data: '前述提到，人人都可以加入百家樂的遊戲當中，它是一款適合所有人的娛樂遊戲，會影響玩家遊戲體驗的變數就是平台本身了，而影響平台好壞的關鍵就在於口碑、聲譽還有優惠了，有鑑於本站對於各家有提供百家樂遊戲平台的優惠整理，我們整理出以下四間平台的優惠內容，以此為評估準則，來說明為何我們會推薦GS娛樂城，GS娛樂城的百家樂真的這麼好嗎？'
-                    }
-                ],
-                baccaratData5: [
-                    {
-                        data: 'SA娛樂城可說是亞洲領先的在線娛樂平台提供商。利用最先進的技術，提供了包括百家樂等各種及時連線遊戲，由專業人員開發，並提供信賴的支持服務，受到全球玩家的歡迎。'
-                    }, {
-                        data: '娛樂城提供一站式服務，滿足不同企業的需求，從集成到運營，經驗豐富的專業開發團隊隨時為合作夥伴提供全方位的技術支持。'
-                    }, {
-                        data: 'SA沙龍真人百家樂是亞洲人最愛的線上真人百家樂系統之一，已在亞洲深耕多年，遊戲全程都是由嚴選的美女荷官主持，並以高級設備高清畫質直播，同時有專人在旁監控，保持遊戲的公開、公平、公正。沙龍真人百家樂還支援多國貨幣，讓客戶有身歷其境的感覺。'
-                    }, {
-                        data: '就算尚未儲值、轉點，也能直接進入遊戲畫面，出現以下畫面就代表正在載入SA Gaming沙龍真人視訊百家樂。'
-                    }, {
-                        data: '第一次玩SA Gaming沙龍真人視訊百家樂的新手玩家也不用太過緊張，剛載入遊戲畫面會出現以下的功能提示，當然已經熟悉SA Gaming沙龍真人視訊百家樂的資深玩家則可以直接選擇全部略過。'
-                    }, {
-                        data: '從SA Gaming沙龍真人視訊百家樂介面可以看到左邊除了百家樂這款遊戲之外，還有其他遊戲、多檯投注、老虎機遊戲、娛樂遊戲、移動平台等不同選項。'
-                    }, {
-                        data: '其中比較特別的是「多檯投注」，也就是GSBET推出的一次玩多桌服務，對於非常熟悉SA Gaming沙龍真人視訊百家樂這款撲克遊戲的玩家來說，這項功能簡直就是他們的夢幻天堂，掌握了百家樂技巧還可以一次在多桌下注，大幅提升他們賺錢的速度。在多檯投注中，共設有3種檢視模式，讓玩家最多可以同時操作16桌的投注，享受多重的刺激與快感。'
-                    }, {
-                        data: '從以下多檯投注的畫面可以看到不同桌的百家樂看路紀錄圖，以及各桌的遊戲狀態、開牌結果等資訊都相當清楚的顯示在畫面中，右上角則是真人視訊百家樂玩家最感興趣的真人美女荷官，同時在線為玩家開牌、掌握流程與節奏。'
-                    }, {
-                        data: '想要玩其他遊戲如龍虎、骰寶、輪盤、各大老虎機遊戲的玩家也能在左邊欄的按鈕找到。'
-                    }, {
-                        data: '回到今天介紹的重點「百家樂」遊戲，玩家可以選擇自己有興趣的美女荷官，點擊進入牌局中，進入之前還需要選擇限紅，分別有三個選擇，限紅30-3,000、100-10K、300-30K。'
-                    }
-                    , {
-                        title: '那麼什麼是限紅呢？這邊為大家簡單科普一下',
-                        data: '在SA Gaming沙龍真人視訊百家樂遊戲中，每一個賭桌都會有所謂的限紅。所有SA Gaming沙龍真人視訊百家樂玩家投注在各個投注區內的下注碼不能超過該桌的限紅，投注區包含莊家、閒家、和、對子、其他變化投注法的投注區都包含在內。在正式開始之前，荷官會執行數紅的動作，也就是在發牌或揭曉開牌時，進行點算各個投注區的下注碼，確保總和未超過指定的限紅額，若各個投注區的下注碼總和超過該賭桌的限紅，荷官會要求玩家減少下注額至指定限紅後才開局。'
-                    }, {
-                        data: '選擇限紅後就正式進入百家樂遊戲啦，玩家進入遊戲畫面後可以在旁觀看不下注，但若長達5局都未下注，系統就會強制將玩家退回遊戲大廳，但也無須擔心，此時只要再重新點選有興趣的牌桌進入就可以囉。'
-                    }, {
-                        data: '畫面中可以清楚看到荷官在發牌、洗牌、開牌等動作，對玩家來說百家樂遊戲過程的公平、公正、公開是非常重要的。'
-                    }, {
-                        data: '開牌之前玩家共有30秒可以決定要下注的區域，時間到之後畫面會顯示「停止投注」，接著就是荷官開牌，完成開牌後畫面上會清楚的顯示開牌結果。'
-                    }, {
-                        data: '百家樂遊戲過程中玩家可以點選右方的E01~E12切換不同牌桌，也能看到該牌桌過去的歷史開牌紀錄與檯號等資料。最右邊也能直接看到E01~E12的狀態，包含洗牌中、發牌中、開牌結果（如莊贏、閒贏、和等），一目了然。'
-                    }
+                baccaratData1: [{
+                    data: '百家樂可以說不管是線上娛樂城或是實體賭場最經典的博奕遊戲之一，受惠於科技技術的進步，現今的玩家們已經用不著實際走進賭場才能參與百家樂對戰，只要手機或電腦，就能玩到超高度擬真與完美還原賭場現況的線上真人百家樂遊戲。'
+                }, {
+                    data: '但無論是哪一家線上真人百家樂系統，其實都主打著美女荷官，保有真人親切互動，並搭配全方位無死角的高畫質攝影鏡頭，讓玩家就算是線上參與百家樂遊戲，整場賭局還是能保持公平、公正、公開與透明的特性，不分資深或新手玩家也都能百分百安心擁有超越真實賭場的遊戲體驗，享受極致奢華的VIP服務。'
+                }, {
+                    data: '而本站為將百家樂遊戲做更好的推廣，獨家開箱介紹目前累積最多玩家的四大真人百家樂遊戲系統，包含SA Gaming沙龍百家樂、Allbet歐博真人百家樂、DG(Dream Gaming)真人百家樂和WM真人百家樂等四款知名百家樂平台，一次公開平台的遊戲介面與操作流程，並藉由基礎的百家樂遊戲規則與更多玩法技巧的分享，不只讓你能夠撥開百家樂神秘的面紗，更帶領你成為百家樂的遊戲高手，想提升自身的百家樂勝率嗎？本站一整套的百家樂實戰教學不藏私分享，非常值得你研讀。'
+                },],
+                baccaratData2: [{
+                    data: '受到百家樂問世時間較早，加上百家樂也一直都是各家娛樂城主推的遊戲項目，所以其受矚目的程度可說是非常驚人，每一年參與百家樂的人數也是不斷在增加，相對的讓許多平台無不爭先恐後的推出，目的就是希望能夠分食百家樂這塊市場，而，攤開網上這麼多間的平台，我們又應該如何選擇呢？'
+                }, {
+                    data: '其實想挑選合適的百家樂遊戲場域，還是需要先選擇優質的娛樂城平台，各家娛樂城所推出的優惠內容也許大同小異，這時就該選擇具口碑、聲譽佳的娛樂城了，而本站所推薦的GS娛樂城百家樂，不只針對新手玩家首次儲值釋放了儲值1,000即送1,000的優惠方案，對於好友推薦成功，一人還可現領300的優惠回饋，而且沒有人數上限，著實非常的佛心，你能真切的感受到平台的誠意，就算讀者最終不是選擇GS娛樂城，其實保持著幾個特點就是，平台本身具有口碑與聲譽、對於百家樂遊戲可能有相對應的優惠或是平台提供的遊戲體驗相當的不錯，保持這幾個原則，就能挑選到合適的百家樂平台了。'
+                }],
+                baccaratData3: [{
+                    data: '你會不會好奇，百家樂這麼受到歡迎，它真的適合每一個人嗎？誰才適合玩百家樂呢？而其實，百家樂就是一款娛樂遊戲，所以並沒有所謂誰才適合玩，換句話說，只要有興趣，人人都可以嘗試去遊玩百家樂，但取決於每個人進入百家樂的目的不同，有些人可能單純的想打發時間，有些人則是希望可以從百家樂獲得更多的額外獎勵，當然你的心態也就影響著用什麼樣的方法去玩百家樂了。'
+                }, {
+                    data: '我們可以從三個面向來探討，如果你是一個初入百家樂的菜鳥，可能對於百家樂的規則與遊戲流程還不是那麼熟悉，或是你可能只是單純想要打發時間，那麼你可能只需要好好搞懂百家樂的遊戲規則，包含百家樂如何計算點數、如何補牌以及百家樂如何下注等，熟悉有關遊戲的一切資訊，你就可以盡情的享受過程的刺激。'
+                }, {
+                    data: '而如果你雖然還只是一個百家樂的新手，但你的目標是希望藉由百家樂的遊戲過程中，去獲得更多額外的回饋，那你不只是認識遊戲規則，將需要更了解百家樂的投注技巧，包含百家樂在什麼樣的情況下可以有的下注策略，或是百家樂有沒有什麼樣的預測方法等，同時，更多的實戰練習也是此階段的你最需要的部分。'
+                }, {
+                    data: '當然對於身經百戰的資深玩家，百家樂的一切你可能都已經瞭若指掌，會影響你勝負的就是臨場狀況了，你是否可以冷靜沉著的面對每一次不利的局面，藉由更好的思考判斷該下的決策，除此之外，也建議此階段的玩家，學會做好每一次進入百家樂遊戲前的止損目標，不只可以享受到百家樂對戰的刺激感，還能盡可能的保有獲利的可能。'
+                }],
+                baccaratData4: [{
+                    data: '前述提到，人人都可以加入百家樂的遊戲當中，它是一款適合所有人的娛樂遊戲，會影響玩家遊戲體驗的變數就是平台本身了，而影響平台好壞的關鍵就在於口碑、聲譽還有優惠了，有鑑於本站對於各家有提供百家樂遊戲平台的優惠整理，我們整理出以下四間平台的優惠內容，以此為評估準則，來說明為何我們會推薦GS娛樂城，GS娛樂城的百家樂真的這麼好嗎？'
+                }],
+                baccaratData5: [{
+                    data: 'SA娛樂城可說是亞洲領先的在線娛樂平台提供商。利用最先進的技術，提供了包括百家樂等各種及時連線遊戲，由專業人員開發，並提供信賴的支持服務，受到全球玩家的歡迎。'
+                }, {
+                    data: '娛樂城提供一站式服務，滿足不同企業的需求，從集成到運營，經驗豐富的專業開發團隊隨時為合作夥伴提供全方位的技術支持。'
+                }, {
+                    data: 'SA沙龍真人百家樂是亞洲人最愛的線上真人百家樂系統之一，已在亞洲深耕多年，遊戲全程都是由嚴選的美女荷官主持，並以高級設備高清畫質直播，同時有專人在旁監控，保持遊戲的公開、公平、公正。沙龍真人百家樂還支援多國貨幣，讓客戶有身歷其境的感覺。'
+                }, {
+                    data: '就算尚未儲值、轉點，也能直接進入遊戲畫面，出現以下畫面就代表正在載入SA Gaming沙龍真人視訊百家樂。'
+                }, {
+                    data: '第一次玩SA Gaming沙龍真人視訊百家樂的新手玩家也不用太過緊張，剛載入遊戲畫面會出現以下的功能提示，當然已經熟悉SA Gaming沙龍真人視訊百家樂的資深玩家則可以直接選擇全部略過。'
+                }, {
+                    data: '從SA Gaming沙龍真人視訊百家樂介面可以看到左邊除了百家樂這款遊戲之外，還有其他遊戲、多檯投注、老虎機遊戲、娛樂遊戲、移動平台等不同選項。'
+                }, {
+                    data: '其中比較特別的是「多檯投注」，也就是GSBET推出的一次玩多桌服務，對於非常熟悉SA Gaming沙龍真人視訊百家樂這款撲克遊戲的玩家來說，這項功能簡直就是他們的夢幻天堂，掌握了百家樂技巧還可以一次在多桌下注，大幅提升他們賺錢的速度。在多檯投注中，共設有3種檢視模式，讓玩家最多可以同時操作16桌的投注，享受多重的刺激與快感。'
+                }, {
+                    data: '從以下多檯投注的畫面可以看到不同桌的百家樂看路紀錄圖，以及各桌的遊戲狀態、開牌結果等資訊都相當清楚的顯示在畫面中，右上角則是真人視訊百家樂玩家最感興趣的真人美女荷官，同時在線為玩家開牌、掌握流程與節奏。'
+                }, {
+                    data: '想要玩其他遊戲如龍虎、骰寶、輪盤、各大老虎機遊戲的玩家也能在左邊欄的按鈕找到。'
+                }, {
+                    data: '回到今天介紹的重點「百家樂」遊戲，玩家可以選擇自己有興趣的美女荷官，點擊進入牌局中，進入之前還需要選擇限紅，分別有三個選擇，限紅30-3,000、100-10K、300-30K。'
+                }, {
+                    title: '那麼什麼是限紅呢？這邊為大家簡單科普一下',
+                    data: '在SA Gaming沙龍真人視訊百家樂遊戲中，每一個賭桌都會有所謂的限紅。所有SA Gaming沙龍真人視訊百家樂玩家投注在各個投注區內的下注碼不能超過該桌的限紅，投注區包含莊家、閒家、和、對子、其他變化投注法的投注區都包含在內。在正式開始之前，荷官會執行數紅的動作，也就是在發牌或揭曉開牌時，進行點算各個投注區的下注碼，確保總和未超過指定的限紅額，若各個投注區的下注碼總和超過該賭桌的限紅，荷官會要求玩家減少下注額至指定限紅後才開局。'
+                }, {
+                    data: '選擇限紅後就正式進入百家樂遊戲啦，玩家進入遊戲畫面後可以在旁觀看不下注，但若長達5局都未下注，系統就會強制將玩家退回遊戲大廳，但也無須擔心，此時只要再重新點選有興趣的牌桌進入就可以囉。'
+                }, {
+                    data: '畫面中可以清楚看到荷官在發牌、洗牌、開牌等動作，對玩家來說百家樂遊戲過程的公平、公正、公開是非常重要的。'
+                }, {
+                    data: '開牌之前玩家共有30秒可以決定要下注的區域，時間到之後畫面會顯示「停止投注」，接著就是荷官開牌，完成開牌後畫面上會清楚的顯示開牌結果。'
+                }, {
+                    data: '百家樂遊戲過程中玩家可以點選右方的E01~E12切換不同牌桌，也能看到該牌桌過去的歷史開牌紀錄與檯號等資料。最右邊也能直接看到E01~E12的狀態，包含洗牌中、發牌中、開牌結果（如莊贏、閒贏、和等），一目了然。'
+                }
 
                 ],
-                baccaratData6: [
-                    {
-                        data: '歐博真人提供一些人性化的界面和響應設計，在任何設備上皆可完美表現。作為博彩業最大的供應商平台之一，歐博擁有最頂尖的技術團隊，為所有電腦及移動設備的玩家提供最佳的遊戲體驗。'
-                    }, {
-                        data: '遊戲是選擇合適的賭場的重要因素，歐博除了提供最穩定的系統外，更多的方面可以提供安全而新奇的遊戲體驗。為玩家提供便利順暢的真人視訊遊戲的環境。'
-                    }, {
-                        data: '歐博實時視訊真人遊戲為桌上游戲愛好者提供了很多選擇。您可以享受撲克，輪盤，妞妞，骰寶和其他娛樂性遊戲。百家樂也很有代表性。除了可以提供經典的體驗，並且還有有趣的附帶投注選項。'
-                    }, {
-                        data: '此款真人百家樂在各國娛樂城皆具備高人氣，在台灣也經營長達數十年，線上體驗刺激、遊戲品質穩定，加上優良信譽值得信任，非常推薦入門玩家。'
-                    }, {
-                        data: '同樣的，即使是尚未儲值、轉點，也能直接進入遊戲畫面，出現以下畫面就代表正在載入Allbet歐博真人百家樂。'
-                    }, {
-                        data: '進入到Allbet歐博真人百家樂系統後，會請玩家先行設定頭像，選擇自己喜歡的即可。從初始畫面首先看到的是「熱門遊戲」，包含最簡單的剪刀石頭布、百家樂、龍虎、炸金花、牛牛、博丁、骰寶、HiLo、輪盤等，其中佔最多賭桌的當然就是最熱門的真人視訊百家樂了。'
-                    }, {
-                        data: '從這個初始畫面也可以看到各個遊戲賭桌的狀態，像是下注倒數讀秒秒數、洗牌中、開牌結果等資訊。'
-                    }, {
-                        data: '玩家也可以點選右邊欄位的遊戲分類找到自己有興趣的遊戲或類別。Allbet歐博真人百家樂遊戲平台中的真人視訊遊戲設有多個特色遊戲廳，包含聚龍廳、性感廳、快速廳、超級多檯、咪牌百家樂、VIP包桌等不同選擇，接著將為大家展示Allbet歐博真人百家樂遊戲平台中不同特色廳別的遊戲畫面。'
-                    }, {
-                        title: '聚龍廳',
-                        data: 'Allbet歐博真人百家樂遊戲中的「聚龍廳」結合了時下最受百家樂玩家歡迎的真人視訊類遊戲，包含了11檯真人百家樂、1檯輪盤、1檯龍虎、1檯骰寶等。Allbet歐博真人百家樂遊戲採用的是6張牌先發的派牌方式，在玩家下注之前結果已成定局，這種派牌方式能夠最大程度保證百家樂遊戲的公平性，也是最多玩家選擇的廳別。Allbet歐博真人百家樂遊戲聚龍廳提供玩家選擇限紅與座位的獨特功能，百家樂玩家可以根據個人的需求來調整想要投注的限額。百家樂各個賭桌的介面設計與按鈕設置皆由專業人員測試開發完成，保證是市面上最符合玩家投注習慣的介面，對於玩家來說更為方便使用。'
-                    }, {
-                        title: '性感廳',
-                        data: 'Allbet歐博真人百家樂遊戲中的「性感廳」絕對是男性朋友的最愛，除了同樣專業、高顏值的荷官之外，火辣性感的荷官更讓玩家大飽眼福。Allbet歐博真人百家樂遊戲中的「性感廳」共設有4檯百家樂與1檯剪刀石頭布，玩家可以自行從中挑選想玩的遊戲以及喜歡的火辣荷官。'
-                    }
-                    , {
-                        title: '快速廳',
-                        data: 'Allbet歐博真人百家樂遊戲中的「快速廳」非常適合有一套固定百家樂技巧與策略的玩家使用，Allbet歐博真人百家樂遊戲中的「快速廳」一局下注時間不到20秒，就跟麻將打快速牌一樣，玩起來的速度比一般百家樂賭桌快了2倍，對於資深百家樂玩家來說，賺錢的時間也快了2倍。也就是實實在在的「賺快錢桌」！'
-                    }, {
-                        title: '經典百家樂',
-                        data: 'Allbet歐博真人百家樂遊戲中的「經典百家樂」顧名思義，也就是完完全全比照像是拉斯維加斯(Las Vegas)、澳門等實體賭場的百家樂玩法，經典百家樂每一局的下注時間為46秒，與前面的快速廳相比慢了2倍多。想要體驗真正的百家樂、悠閒謹慎思考每一步的玩家，一定要選擇Allbet歐博真人百家樂遊戲的「經典百家樂」。'
-                    }, {
-                        title: '超級多檯',
-                        data: 'Allbet歐博真人百家樂遊戲中的「超級多檯」讓百家樂玩家能夠多檯觀戰，玩家可根據喜好設定聚龍廳4桌/8桌/16桌/36桌的現場遊戲在同一個頁面上。讓玩家輕鬆在不同遊戲種類、賭桌之間自由的來回跳轉，各檯的遊戲路紙也會即時更新、各桌遊戲視頻流暢切換，讓玩家可同時投註多局遊戲，直接入座路紙表現較好的的遊戲檯，藉以創造連贏的黃金機會。'
-                    }, {
-                        title: '咪牌百家樂',
-                        data: 'Allbet歐博真人百家樂遊戲中的「咪牌百家樂」中的「咪牌權」由當局下注額最高的玩家取得，玩家360度都能咪牌，取得「咪牌權」的玩家可以發現有玩真人百家樂的加倍臨場感。擔心有百家樂作弊行為的玩家，很適合玩Allbet歐博真人百家樂遊戲中的「咪牌百家樂」，獨創的咪牌機制使得作弊的難度難如登天，相當安全，也因此非常受新手玩家的歡迎。'
-                    }, {
-                        title: 'VIP包桌',
-                        data: 'Allbet歐博真人百家樂遊戲中的「VIP包桌」由Allbet歐博精英荷官派牌，桌面上的總籌碼、下注總限額皆為VIP級別，也就是專為「大額投註」的VIP玩家提供專屬特優服務，因此帳戶餘額不足的玩家是進不去的哦。在Allbet歐博真人百家樂遊戲中的「VIP包桌」，玩家可以最大程度的享受到實體賭場臨場提供的所有VIP特權，像是獨享桌檯、控制百家樂每ㄧ局的開牌時間、無限次飛牌、智慧手動咪牌、更換荷官或牌靴等。VIP包桌中的VIP可以自行設定桌檯密碼，僅限自己邀請的朋友參與遊戲。'
-                    }
+                baccaratData6: [{
+                    data: '歐博真人提供一些人性化的界面和響應設計，在任何設備上皆可完美表現。作為博彩業最大的供應商平台之一，歐博擁有最頂尖的技術團隊，為所有電腦及移動設備的玩家提供最佳的遊戲體驗。'
+                }, {
+                    data: '遊戲是選擇合適的賭場的重要因素，歐博除了提供最穩定的系統外，更多的方面可以提供安全而新奇的遊戲體驗。為玩家提供便利順暢的真人視訊遊戲的環境。'
+                }, {
+                    data: '歐博實時視訊真人遊戲為桌上游戲愛好者提供了很多選擇。您可以享受撲克，輪盤，妞妞，骰寶和其他娛樂性遊戲。百家樂也很有代表性。除了可以提供經典的體驗，並且還有有趣的附帶投注選項。'
+                }, {
+                    data: '此款真人百家樂在各國娛樂城皆具備高人氣，在台灣也經營長達數十年，線上體驗刺激、遊戲品質穩定，加上優良信譽值得信任，非常推薦入門玩家。'
+                }, {
+                    data: '同樣的，即使是尚未儲值、轉點，也能直接進入遊戲畫面，出現以下畫面就代表正在載入Allbet歐博真人百家樂。'
+                }, {
+                    data: '進入到Allbet歐博真人百家樂系統後，會請玩家先行設定頭像，選擇自己喜歡的即可。從初始畫面首先看到的是「熱門遊戲」，包含最簡單的剪刀石頭布、百家樂、龍虎、炸金花、牛牛、博丁、骰寶、HiLo、輪盤等，其中佔最多賭桌的當然就是最熱門的真人視訊百家樂了。'
+                }, {
+                    data: '從這個初始畫面也可以看到各個遊戲賭桌的狀態，像是下注倒數讀秒秒數、洗牌中、開牌結果等資訊。'
+                }, {
+                    data: '玩家也可以點選右邊欄位的遊戲分類找到自己有興趣的遊戲或類別。Allbet歐博真人百家樂遊戲平台中的真人視訊遊戲設有多個特色遊戲廳，包含聚龍廳、性感廳、快速廳、超級多檯、咪牌百家樂、VIP包桌等不同選擇，接著將為大家展示Allbet歐博真人百家樂遊戲平台中不同特色廳別的遊戲畫面。'
+                }, {
+                    title: '聚龍廳',
+                    data: 'Allbet歐博真人百家樂遊戲中的「聚龍廳」結合了時下最受百家樂玩家歡迎的真人視訊類遊戲，包含了11檯真人百家樂、1檯輪盤、1檯龍虎、1檯骰寶等。Allbet歐博真人百家樂遊戲採用的是6張牌先發的派牌方式，在玩家下注之前結果已成定局，這種派牌方式能夠最大程度保證百家樂遊戲的公平性，也是最多玩家選擇的廳別。Allbet歐博真人百家樂遊戲聚龍廳提供玩家選擇限紅與座位的獨特功能，百家樂玩家可以根據個人的需求來調整想要投注的限額。百家樂各個賭桌的介面設計與按鈕設置皆由專業人員測試開發完成，保證是市面上最符合玩家投注習慣的介面，對於玩家來說更為方便使用。'
+                }, {
+                    title: '性感廳',
+                    data: 'Allbet歐博真人百家樂遊戲中的「性感廳」絕對是男性朋友的最愛，除了同樣專業、高顏值的荷官之外，火辣性感的荷官更讓玩家大飽眼福。Allbet歐博真人百家樂遊戲中的「性感廳」共設有4檯百家樂與1檯剪刀石頭布，玩家可以自行從中挑選想玩的遊戲以及喜歡的火辣荷官。'
+                }, {
+                    title: '快速廳',
+                    data: 'Allbet歐博真人百家樂遊戲中的「快速廳」非常適合有一套固定百家樂技巧與策略的玩家使用，Allbet歐博真人百家樂遊戲中的「快速廳」一局下注時間不到20秒，就跟麻將打快速牌一樣，玩起來的速度比一般百家樂賭桌快了2倍，對於資深百家樂玩家來說，賺錢的時間也快了2倍。也就是實實在在的「賺快錢桌」！'
+                }, {
+                    title: '經典百家樂',
+                    data: 'Allbet歐博真人百家樂遊戲中的「經典百家樂」顧名思義，也就是完完全全比照像是拉斯維加斯(Las Vegas)、澳門等實體賭場的百家樂玩法，經典百家樂每一局的下注時間為46秒，與前面的快速廳相比慢了2倍多。想要體驗真正的百家樂、悠閒謹慎思考每一步的玩家，一定要選擇Allbet歐博真人百家樂遊戲的「經典百家樂」。'
+                }, {
+                    title: '超級多檯',
+                    data: 'Allbet歐博真人百家樂遊戲中的「超級多檯」讓百家樂玩家能夠多檯觀戰，玩家可根據喜好設定聚龍廳4桌/8桌/16桌/36桌的現場遊戲在同一個頁面上。讓玩家輕鬆在不同遊戲種類、賭桌之間自由的來回跳轉，各檯的遊戲路紙也會即時更新、各桌遊戲視頻流暢切換，讓玩家可同時投註多局遊戲，直接入座路紙表現較好的的遊戲檯，藉以創造連贏的黃金機會。'
+                }, {
+                    title: '咪牌百家樂',
+                    data: 'Allbet歐博真人百家樂遊戲中的「咪牌百家樂」中的「咪牌權」由當局下注額最高的玩家取得，玩家360度都能咪牌，取得「咪牌權」的玩家可以發現有玩真人百家樂的加倍臨場感。擔心有百家樂作弊行為的玩家，很適合玩Allbet歐博真人百家樂遊戲中的「咪牌百家樂」，獨創的咪牌機制使得作弊的難度難如登天，相當安全，也因此非常受新手玩家的歡迎。'
+                }, {
+                    title: 'VIP包桌',
+                    data: 'Allbet歐博真人百家樂遊戲中的「VIP包桌」由Allbet歐博精英荷官派牌，桌面上的總籌碼、下注總限額皆為VIP級別，也就是專為「大額投註」的VIP玩家提供專屬特優服務，因此帳戶餘額不足的玩家是進不去的哦。在Allbet歐博真人百家樂遊戲中的「VIP包桌」，玩家可以最大程度的享受到實體賭場臨場提供的所有VIP特權，像是獨享桌檯、控制百家樂每ㄧ局的開牌時間、無限次飛牌、智慧手動咪牌、更換荷官或牌靴等。VIP包桌中的VIP可以自行設定桌檯密碼，僅限自己邀請的朋友參與遊戲。'
+                }
 
                 ],
-                baccaratData7: [
-                    {
-                        data: 'DG真人擁有數百名訓練有素的專業荷官，真實的賭場環境，穩定的高端設備和專業的技術支持，保障DG平台的穩定運行，給玩家帶來如臨現場的美妙體驗，並且支持多平台訪問，無論玩家現在在哪裡隨時都可以享受遊戲的樂趣。'
+                baccaratData7: [{
+                    data: 'DG真人擁有數百名訓練有素的專業荷官，真實的賭場環境，穩定的高端設備和專業的技術支持，保障DG平台的穩定運行，給玩家帶來如臨現場的美妙體驗，並且支持多平台訪問，無論玩家現在在哪裡隨時都可以享受遊戲的樂趣。'
+                }, {
+                    data: 'DG夢幻真人提供各種獨特的在線現場遊戲。為了給玩家提供最高的娛樂性，獨家提供紅色搶包功能。玩家可以隨時抓取紅包，選擇認真性感漂亮的荷官，滿足玩家的視覺與遊戲饗宴。'
+                }, {
+                    data: '受到資深百家樂玩家極力推薦，評價5星級的系統之一。除了遊戲玩法創新，還有臨場體驗的刺激感。DG旗艦真人百家樂提供基本的百家樂玩法，例如龍虎、輪盤、骰寶、番攤等，登入遊戲之後即可清楚看到牌局的全況，同時還主打美女荷官，讓玩家除了遊戲本身的刺激體驗，還兼顧視覺感受。'
+                }, {
+                    data: '尚未儲值、轉點的玩家也能直接進入遊戲畫面觀賽，出現以下畫面就代表正在載入DG(Dream Gaming)真人視訊百家樂'
+                }, {
+                    data: '進入到DG(Dream Gaming)真人百家樂系統即可從初始畫面各個賭桌的狀態，第一個呈現的畫面是DG(Dream Gaming)真人百家樂系統中的「旗艦廳」，若無特別篩選，則會顯示全部類別的遊戲，玩家也可以點擊上方來篩選自己有興趣的遊戲，如百家樂、龍虎、輪盤、骰寶、鬥牛、炸金花、金工等熱門遊戲。'
+                }, {
+                    data: 'DG(Dream Gaming)真人百家樂系統設有六大特色廳別，包含旗艦廳、國際廳、現場聽、歐洲廳、多桌廳、美女直播廳等，接著將為大家展示DG(Dream Gaming)真人百家樂遊戲平台中不同特色廳別的遊戲畫面。'
+                }, {
+                    title: '旗艦廳',
+                    data: 'DG(Dream Gaming)真人百家樂遊戲中的「旗艦廳」除了有一般百家樂桌，也有競咪百家樂與極速百家樂，第一次接觸DG(Dream Gaming)真人百家樂遊戲的玩家應該會發現，DG百家樂的系統比起其他真人百家樂系統有更多華麗的動畫設計，看起來更具備高科技感與專業度。'
+                }, {
+                    title: '國際廳',
+                    data: 'DG(Dream Gaming)真人百家樂遊戲中的「國際廳」是各大特色廳別之中最新建立的，比起其他廳別，多了一款「保險百家樂」，屬於百家樂的延伸玩法，整體流程都與一般百家樂無二致，差別在於玩法以及賠率，獨特的玩法讓玩家在下注、翻牌後還有機會做其他的決策。'
+                }, {
+                    title: '現場廳',
+                    data: 'DG(Dream Gaming)真人百家樂遊戲中的「現場廳」是最接近實體賭場的百家樂流程，適合喜歡經典百家樂的玩家，打破了DG百家樂作弊的負面傳聞，提供玩家彷彿親臨賭廳現場的絕妙體驗。'
+                }, {
+                    title: '歐洲廳',
+                    data: 'DG(Dream Gaming)真人百家樂遊戲中的「歐洲廳」顧名思義，邀請到了歐洲專業荷官為玩家派牌，更有親臨歐美賭場的跨國體驗。'
+                }, {
+                    title: '多桌廳',
+                    data: 'DG(Dream Gaming)真人百家樂遊戲中的「多桌廳」，讓玩家能夠同時操作、下注不同遊戲與賭桌。對於熟稔各種撲克遊戲的玩家來說，這種多桌廳絕對是高效率賺錢的不二選擇。'
+                }],
+                baccaratData8: [{
+                    data: '擁有真人視訊及電子遊戲並且提供移動平台的WM，堅持「公平、公正、公開、安全」的同時，WM發行每一款遊戲、真人視訊或是平台系統，皆通過第三方國際機構的驗證、許可，安全無虞的公平遊戲環境對WM來說，是它們對於玩家及經銷商客戶的一份責任。主頁排版方式趨向簡潔一目瞭然，操作也更為方便快速、增加仿真360度無死角咪牌功能、競咪百家樂桌可透過語音功能和荷官互動聊天、玩家可隨時下載完整遊戲過程，使用手機回放高清不延遲。'
+                }, {
+                    data: 'WM百家樂主打創新技術，玩家可以隨意切換不同模式，具備高度創新、多樣性的遊戲體驗，加上真人視訊畫面，吸引許多百家樂好手加入，無論新手、資深老手都深深被吸引。'
+                }, {
+                    data: '尚未儲值、轉點的玩家也能直接進入遊戲畫面觀賽，出現以下畫面就代表正在載入WM Casino真人視訊百家樂。'
+                }, {
+                    data: '進到WM Casino真人百家樂首先映入眼簾的就是WM Casino遊戲系統中的全部遊戲，包含百家樂、龍虎、色諜、輪盤、骰寶、牛牛、魚蝦蟹、炸金花、安達吧哈、番攤等世界各地熱門遊戲，接著將為大家展示WM Casino真人百家樂遊戲平台中不同遊戲檯桌畫面。'
+                }, {
+                    title: '百家樂',
+                    data: '在WM遊戲平台中最熱門的百家樂遊戲共有多達25桌，WM真人百家樂種類為四大平台中最多的，分別有性感百家樂、經典百家樂、極速百家樂、主題百家樂、咪牌百家樂、現金百家樂等六大百家樂遊戲檯桌。'
+                }, {
+                    data: '其中性感百家樂的荷官名不虛傳，各個穿著清涼火辣，號稱「最性感荷官群」，讓玩家享有專業賭場體驗之餘，還能大飽眼福，享有獨家視覺饗宴。死忠的玩家也會發現WM Casino真人百家樂荷官不同於一般正經八百的荷官在現場派牌，他們還發展出一套手勢與舞蹈動作，對於玩家來說是娛樂性十足的休閒活動。'
+                }, {
+                    title: '龍虎',
+                    data: 'WM真人百家樂遊戲平台的龍虎遊戲共有3檯，是僅次於百家樂的熱門遊戲，玩家除了龍、虎、和之外，還可以下注龍單、龍雙、虎單、虎雙、龍黑、龍紅、虎黑、虎紅等延伸選項。'
+                }, {
+                    title: '色諜',
+                    data: 'WM真人百家樂平台的色諜遊戲桌數共設有2桌，下注選項除了經典玩法的大、小、單、雙之外，玩家還可以選擇下注賠率較高的紅白組合，最高賠率高達1:12。'
+                }, {
+                    data: '實體賭場必備的輪盤遊戲，在WM Casino當然也是不可或缺的，輪盤可以下注的選項是這幾款遊戲中最多的，玩家可以直接下注一個號碼或號碼組合，也可以選擇押顏色、奇偶數、大小號、單雙號等多種玩法。'
+                }, {
+                    title: '骰寶',
+                    data: 'WM真人百家樂遊戲系統中的骰寶除了經典玩法賭大小、賭單雙、對子之外，也可以選擇押注骰子點數和，賠率最高達1:150。'
+                }, {
+                    title: '多台',
+                    data: 'WM真人百家樂遊戲平台中同樣提供玩家多檯投注的服務，玩家有固定4檯或固定8檯兩種選擇，最棒的是可以依照好路、熱門、投注等不同篩選機制來選擇要置頂的檯桌，以筆者來說，最優先使用的就是「好路置頂」功能，來篩選出目前局勢較佳的檯桌，開始投注後再改為「投注置頂」。'
+                }],
+                baccaratData9: [{
+                    title: '百家樂遊戲規則',
+                    data: [{
+                        text: '百家樂是一款賠率公平的撲克遊戲，一般來說，會使用6副至12副撲克牌來進行遊戲，每副牌52張，所以遊戲的牌數總和約為312至624張。'
                     }, {
-                        data: 'DG夢幻真人提供各種獨特的在線現場遊戲。為了給玩家提供最高的娛樂性，獨家提供紅色搶包功能。玩家可以隨時抓取紅包，選擇認真性感漂亮的荷官，滿足玩家的視覺與遊戲饗宴。'
+                        text: '百家樂可以參與投注的人數也沒有嚴格的限制，發牌時，莊家、閒家都會個別收到至少兩張牌，最多三張，第一、第三張牌會派發給閒家，第二、第四張牌派發給莊家，而牌面點數相加個位數接進9為勝利方，牌面點數最大為9點最小為0點。'
                     }, {
-                        data: '受到資深百家樂玩家極力推薦，評價5星級的系統之一。除了遊戲玩法創新，還有臨場體驗的刺激感。DG旗艦真人百家樂提供基本的百家樂玩法，例如龍虎、輪盤、骰寶、番攤等，登入遊戲之後即可清楚看到牌局的全況，同時還主打美女荷官，讓玩家除了遊戲本身的刺激體驗，還兼顧視覺感受。'
+                        text: '參加投注的玩家只要選擇下注和局（Tie）、莊家贏、閒家贏、對子（Pair）任一進行押注，雖然百家樂沒有嚴格的投注人數限制，所以除了常規的九人或十四人參與賭桌之外，在旁觀戰的玩家亦可自由參與投注，只是下注前應該要特別注意投注的上限及下限。'
+                    },]
+                }, {
+                    title: '百家樂點數計算',
+                    data: [{
+                        text: '在百家樂中，撲克牌的點數計算方式如下：'
                     }, {
-                        data: '尚未儲值、轉點的玩家也能直接進入遊戲畫面觀賽，出現以下畫面就代表正在載入DG(Dream Gaming)真人視訊百家樂'
+                        text: '1.Ace：計為1點'
                     }, {
-                        data: '進入到DG(Dream Gaming)真人百家樂系統即可從初始畫面各個賭桌的狀態，第一個呈現的畫面是DG(Dream Gaming)真人百家樂系統中的「旗艦廳」，若無特別篩選，則會顯示全部類別的遊戲，玩家也可以點擊上方來篩選自己有興趣的遊戲，如百家樂、龍虎、輪盤、骰寶、鬥牛、炸金花、金工等熱門遊戲。'
+                        text: '2.2~9：依照數字計算點數'
                     }, {
-                        data: 'DG(Dream Gaming)真人百家樂系統設有六大特色廳別，包含旗艦廳、國際廳、現場聽、歐洲廳、多桌廳、美女直播廳等，接著將為大家展示DG(Dream Gaming)真人百家樂遊戲平台中不同特色廳別的遊戲畫面。'
+                        text: '3.10、J、Q、K：計為0點'
                     }, {
-                        title:'旗艦廳',
-                        data: 'DG(Dream Gaming)真人百家樂遊戲中的「旗艦廳」除了有一般百家樂桌，也有競咪百家樂與極速百家樂，第一次接觸DG(Dream Gaming)真人百家樂遊戲的玩家應該會發現，DG百家樂的系統比起其他真人百家樂系統有更多華麗的動畫設計，看起來更具備高科技感與專業度。'
-                    }, {
-                        title:'國際廳',
-                        data: 'DG(Dream Gaming)真人百家樂遊戲中的「國際廳」是各大特色廳別之中最新建立的，比起其他廳別，多了一款「保險百家樂」，屬於百家樂的延伸玩法，整體流程都與一般百家樂無二致，差別在於玩法以及賠率，獨特的玩法讓玩家在下注、翻牌後還有機會做其他的決策。'
-                    }, {
-                        title: '現場廳',
-                        data: 'DG(Dream Gaming)真人百家樂遊戲中的「現場廳」是最接近實體賭場的百家樂流程，適合喜歡經典百家樂的玩家，打破了DG百家樂作弊的負面傳聞，提供玩家彷彿親臨賭廳現場的絕妙體驗。'
-                    }, {
-                        title: '歐洲廳',
-                        data: 'DG(Dream Gaming)真人百家樂遊戲中的「歐洲廳」顧名思義，邀請到了歐洲專業荷官為玩家派牌，更有親臨歐美賭場的跨國體驗。'
-                    }
-                    , {
-                        title: '多桌廳',
-                        data: 'DG(Dream Gaming)真人百家樂遊戲中的「多桌廳」，讓玩家能夠同時操作、下注不同遊戲與賭桌。對於熟稔各種撲克遊戲的玩家來說，這種多桌廳絕對是高效率賺錢的不二選擇。'
-                    }
-                ],
-                baccaratData8: [
-                    {
-                        data: '擁有真人視訊及電子遊戲並且提供移動平台的WM，堅持「公平、公正、公開、安全」的同時，WM發行每一款遊戲、真人視訊或是平台系統，皆通過第三方國際機構的驗證、許可，安全無虞的公平遊戲環境對WM來說，是它們對於玩家及經銷商客戶的一份責任。主頁排版方式趨向簡潔一目瞭然，操作也更為方便快速、增加仿真360度無死角咪牌功能、競咪百家樂桌可透過語音功能和荷官互動聊天、玩家可隨時下載完整遊戲過程，使用手機回放高清不延遲。'
-                    }, {
-                        data: 'WM百家樂主打創新技術，玩家可以隨意切換不同模式，具備高度創新、多樣性的遊戲體驗，加上真人視訊畫面，吸引許多百家樂好手加入，無論新手、資深老手都深深被吸引。'
-                    }, {
-                        data: '尚未儲值、轉點的玩家也能直接進入遊戲畫面觀賽，出現以下畫面就代表正在載入WM Casino真人視訊百家樂。'
-                    }, {
-                        data: '進到WM Casino真人百家樂首先映入眼簾的就是WM Casino遊戲系統中的全部遊戲，包含百家樂、龍虎、色諜、輪盤、骰寶、牛牛、魚蝦蟹、炸金花、安達吧哈、番攤等世界各地熱門遊戲，接著將為大家展示WM Casino真人百家樂遊戲平台中不同遊戲檯桌畫面。'
-                    }, {
-                        title:'百家樂',
-                        data: '在WM遊戲平台中最熱門的百家樂遊戲共有多達25桌，WM真人百家樂種類為四大平台中最多的，分別有性感百家樂、經典百家樂、極速百家樂、主題百家樂、咪牌百家樂、現金百家樂等六大百家樂遊戲檯桌。'
-                    }, {
-                        data: '其中性感百家樂的荷官名不虛傳，各個穿著清涼火辣，號稱「最性感荷官群」，讓玩家享有專業賭場體驗之餘，還能大飽眼福，享有獨家視覺饗宴。死忠的玩家也會發現WM Casino真人百家樂荷官不同於一般正經八百的荷官在現場派牌，他們還發展出一套手勢與舞蹈動作，對於玩家來說是娛樂性十足的休閒活動。'
-                    }, {
-                        title:'龍虎',
-                        data: 'WM真人百家樂遊戲平台的龍虎遊戲共有3檯，是僅次於百家樂的熱門遊戲，玩家除了龍、虎、和之外，還可以下注龍單、龍雙、虎單、虎雙、龍黑、龍紅、虎黑、虎紅等延伸選項。'
-                    }, {
-                        title:'色諜',
-                        data: 'WM真人百家樂平台的色諜遊戲桌數共設有2桌，下注選項除了經典玩法的大、小、單、雙之外，玩家還可以選擇下注賠率較高的紅白組合，最高賠率高達1:12。'
-                    }, {
-                        data: '實體賭場必備的輪盤遊戲，在WM Casino當然也是不可或缺的，輪盤可以下注的選項是這幾款遊戲中最多的，玩家可以直接下注一個號碼或號碼組合，也可以選擇押顏色、奇偶數、大小號、單雙號等多種玩法。'
-                    }, {
-                        title: '骰寶',
-                        data: 'WM真人百家樂遊戲系統中的骰寶除了經典玩法賭大小、賭單雙、對子之外，也可以選擇押注骰子點數和，賠率最高達1:150。'
-                    }
-                    , {
-                        title: '多台',
-                        data: 'WM真人百家樂遊戲平台中同樣提供玩家多檯投注的服務，玩家有固定4檯或固定8檯兩種選擇，最棒的是可以依照好路、熱門、投注等不同篩選機制來選擇要置頂的檯桌，以筆者來說，最優先使用的就是「好路置頂」功能，來篩選出目前局勢較佳的檯桌，開始投注後再改為「投注置頂」。'
-                    }
-                ]
+                        text: '當手牌點數加總超過9，只會計算總數中的個位數。舉例來說，手牌拿到6跟8，點數計算為4點（6+8=14，取個位數的4），因此點數最高為9點，最低為0點。'
+                    }]
+                }],
+                baccaratData10: [{
+                    data: '百家樂的補牌機制有一套固定的機制，也許線上娛樂城的自動補牌機制，讓玩家不太需要完全了解補牌規則，但熟悉補牌規則，其實可以增加參與百家樂的遊戲樂趣。'
+                }, {
+                    title: '閒家補牌規則',
+                    data: '「閒」前兩張拿到0，1，2， 3， 4， 5點，這時必需補上第三張牌。'
+                }, {
+                    data: '「閒」前兩張拿到6， 7點，這時不再補牌。'
+                }, {
+                    data: '「莊」前兩張如果只拿到0，1，2，3，4，5點，且比「閒」低，這時必需補上第三張牌，再拼一次。'
+                }, {
+                    data: '「閒」前兩張如果拿到8，9點，那兩邊都停止，直接比拼輸贏。'
+                }, {
+                    title: '莊家前兩張牌拿到7，8，9點的補牌規則',
+                    data: '「閒」前兩張拿到8、9點，「莊」就不補牌，「閒」獲勝。'
+                }, {
+                    data: '「閒」三張牌拿到6、7點，「莊」還需補第三張，再比拼一次。'
+                }, {
+                    data: '「閒」第三張拿到8、9點，則「閒」贏，「莊」不必再補第三張牌。'
+                }, {
+                    data: '「閒」前兩張拿到6、7點，「閒」就不能補牌，「莊」也不補牌，直接比點數。'
+                }, {
+                    title: '莊家前兩張牌拿到5點的補牌規則',
+                    data: '「閒」前兩張拿到8、9點，「莊」就不補牌，「閒」贏。'
+                }, {
+                    data: '「閒」補第三張後只有0、1、2、3點，則「莊」贏， 不用再抽第三張。'
+                }, {
+                    data: '「「閒」三張牌拿到4、5、6、7點，「莊」需補第三張，再拼一次。'
+                }, {
+                    data: '「閒」第三張拿到8、9點，則「閒」贏，「莊」不必再補第三張牌。'
+                }, {
+                    title: '莊家前兩張牌拿到4點的補牌規則',
+                    data: '「閒」前兩張拿到8、9點，則「莊」不需補牌，「閒」贏。'
+                }, {
+                    data: '「閒」如果補第三張後只有0、1點，則「莊」贏，不用再抽第三張。'
+                }, {
+                    data: '「閒」三張牌拿到2、3、4、5、6、7點，「莊」需補第三張，再拼一次。'
+                }, {
+                    data: '「閒」第三張加到8、9點，則「閒」贏，「莊」不必再補第三張牌。'
+                }, {
+                    title: '莊家前兩張牌拿到3點的補牌規則',
+                    data: '「閒」前兩張拿到8、9點，「莊」不補牌，「閒」贏。'
+                }, {
+                    data: '「閒」補第三張後出現8點，「莊」 不用再抽第三張，「閒」贏。'
+                }, {
+                    data: '「閒」三張牌拿到0、1、2、3、4、5、6、7、9點，不包含8點 ，「莊」需補第三張，再拼一次。'
+                }, {
+                    title: '莊家前兩張牌拿到0，1，2 點的補牌規則',
+                    data: '「閒」前兩張拿到8、9點，「莊」不補牌，「閒」贏。'
+                }, {
+                    data: '「閒」三張牌不管是幾點，「莊」一律補第三張。'
+                }],
+                baccaratData11: [{
+                    title: '百家樂MARTINGALE投注法',
+                    data: '坊間流傳的「神奇投注法」第一名就是MARTINGALE投注法則，MARTINGALE投注法則又稱為馬丁策略！MARTINGALE投注法則起源於18世紀的法國，由一對夫妻馬丁與格爾所發明，以下為MARTINGALE投注法則三大特點：',
+                    anchorId: 'MARTINGALEBettingMethod'
+                }, {
+                    data: '無論百家樂玩家輸贏多少次，只要是使用MARTINGALE投注法則，一旦贏了一局就可以立刻贏回本錢，百家樂玩家可以事前預先計算可以輸掉的賭本額度，接著依照自己的情況決定要不要賭一把。'
+                }, {
+                    data: '適合本金雄厚，能接受風險的大膽玩家。'
+                }, {
+                    data: 'MARTINGALE投注法則雖說是必勝投注法，但有時候卻有可能承擔了巨大風險後，發現投資報酬率非常低的情況。'
+                }, {
+                    title: '如何操作百家樂MARTINGALE投注法則？',
+                    data: '單押：玩家無論是要投注「莊家」或是投注「閒家」，要做的唯一一件事情就是持續投注同一項目，舉例來說，若玩家決定好要投注「莊家」，就從頭到尾持續投注「莊家」，不可改變。'
+                }, {
+                    data: '加倍投注：MARTINGALE投注法則除了第一點「單押」之外，還需要搭配「加倍投注」。意思是說只要玩家每輸一注，下一注就要把輸的金額數目乘上2倍，一直到玩家贏錢。'
+                }, {
+                    data: '由起可見，馬丁策略也就是MARTINGALE投注法則操作起來非常簡單，重點是本金要夠多，能夠一直堅持加倍下去，直到獲勝的那一刻一舉回本，並且多贏第一次投注的金額，又稱為「百家樂勝利方程式」及「百家樂必勝賭法」。唯一要注意的就是「賭桌的投注上限」，因為一旦超過賭桌上限，玩家就不得再加碼。'
+                }, {
+                    title: '百家樂MARTINGALE投注法則舉例說明',
+                    data: '一般情況'
+                }, {
+                    data: '第1局若花了1000元投注「莊家」，但結果為「閒家」獲勝，這次下注投注結果為輸。'
+                }, {
+                    data: '第2局加倍用2000元投注「莊家」，但結果為「閒家」獲勝，這次下注投注結果為輸。'
+                }, {
+                    data: '第3局加倍用4000元投注「莊家」，而結果為「莊家」獲勝，這次下注投注結果為贏。'
+                }, {
+                    data: '依照上述投注方法來看投注到「莊家」贏為止，第三注投注就獲勝，並且一舉贏回前面輸的金額，再多贏第一注的錢1000元。此時玩家可以選擇結束遊戲，或是繼續玩，若選擇繼續遊戲，則從1000元投注「莊家」開始。'
+                }, {
+                    data: '風險大、報酬低的情況'
+                }, {
+                    data: '一般情況的投注，若一直輸到第6局，此時第7注要加倍加碼本金到64000元，若第7局又輸，加上前面累積就已經輸了127000元，若第7局贏了，也只贏了1000元而已。雖說這種情況下報酬低，卻也是必勝的操作法。因此選擇百家樂MARTINGALE投注法則的玩家一定要對自己足夠了解，下注前心態也應該調整，認知到可能遇到連續輸錢的情況，本金夠又能夠堅持下去的玩家才適合採用此種投注法。'
+                }, {
+                    title: '百家樂1-2-3投注法',
+                    data: '1-2-3投注法則特點介紹：百家樂投注技巧中的1-2-3投注法則非常特別且知名，在全世界百家樂圈子打滾的玩家一定都知道。百家樂1-2-3投注法則很受到百家樂玩家的歡迎，以下為1-2-3投注法的兩大特色：',
+                    anchorId: '123BettingMethod'
+                }, {
+                    data: '最特別的一點就是「任何情況、時機都適用」1-2-3投注法，這種投注法不用擔心遇到長龍、單跳、亂局等各種玩家害怕的惱人情況。'
+                }, {
+                    data: '操作簡單，適合剛入門的新手'
+                }, {
+                    title: '如何操作百家樂1-2-3投注法？',
+                    data: '幾乎不用思考，直接跟著第一局投注，也就是說開局第一局開什麼（莊家、閒家）就投注什麼。要注意的是，這種投注法都不將對子或是和局考慮在內，玩家僅僅需要考慮投注莊家或是閒家即可。'
+                }, {
+                    data: '若該局投注結果輸了，投注第二注第三注就固定投注與「第一注」所開結果同方向。'
+                }, {
+                    data: '承續上一點，若第三局開牌投注結果又輸，此時玩家第四、五、六注先固定押第三局的結果。'
+                }, {
+                    data: '若贏了就根據以上情況重複操作。'
+                }, {
+                    data: '＊附註：這種1-2-3投注法則一旦遇到開長龍，則保證勝率超高，因為基本上就是「跟注」。'
+                }, {
+                    title: '百家樂1-2-3投注法舉例說明',
+                    data: '當玩家遇到「單跳」局面為「莊閒莊閒莊，閒莊閒莊閒」。'
+                }, {
+                    data: '依照剛剛提過的操作方法，第一局開完就要跟注了，所以玩家會是從百家樂開局後的第2局開始投注！此時若玩家投注1000元元在「莊家」，但結果是「閒家」，跟注的第一注投注結果為輸。'
+                }, {
+                    data: '第3局賭金加倍為2000元元投於第一注開牌結果「閒家」，但結果是開莊家，跟注的第二注投注結果為輸。'
+                }, {
+                    data: '第4局賭金再加倍為4000元投注於第一注開牌結果「閒家」，此時第三注投注結果為贏。'
+                }, {
+                    data: '贏了就依照以上3點重新繼續操作。'
+                }, {
+                    data: '第5局賭金為1000元投於「閒家」，但結果是開莊家，投注結果為輸。'
+                }, {
+                    data: '第6局賭金加倍為2000元投注於「莊家」，結果是開閒家，投注結果為輸。'
+                }, {
+                    data: '第7局賭金再加倍為4000元投注於「莊家」，此時投注結果為贏。'
+                }, {
+                    data: '＊這個例子是百家樂遊戲中經典的長單跳，使用百家樂1-2-3投注法恰巧碰到長單跳時，第三注就會贏，因此搭配加倍投注法，就能一舉大幅賺回前面的投注額。'
+                }, {
+                    data: '當玩家遇到混亂的「亂局」如「莊閒閒莊閒，莊閒閒莊閒」。'
+                }, {
+                    data: '一樣第一局開完後開始跟注，因此第一注投注1000元在「莊家」，此時開出「閒家」，第一注投注結果為輸。'
+                }, {
+                    data: '第3局，加倍投注2000元於「閒家」，開出「閒家」，第二注投注結果為贏。'
+                }, {
+                    data: '贏了就依照操作技巧重頭來過。'
+                }, {
+                    data: '第4局，投注1000元在「閒家」，此時開出「莊家」，第一注投注結果為輸。'
+                }, {
+                    data: '第5局，加倍投注2000元於「莊家」，開出「閒家」，第二注投注結果為輸。'
+                }, {
+                    data: '第6局，加倍投注4000元於「莊家」，開出「莊家」，第三注投注結果為贏。'
+                }, {
+                    title: '百家樂PAROLI投注法',
+                }, {
+                    title: '百家樂PAROLI投注法則特點介紹',
+                    data: 'PAROLI投注法則恰巧與前兩一種MARTINGALE投注法相反，是在獲勝的時候才加倍投注。一樣是倍數型原理的投注法，適合的對象與結果卻會大大不同，以下為PAROLI投注法則的特點：',
+                    anchorId: 'PAROLIBettingMethod'
+                }, {
+                    data: 'PAROLI投注法則屬於倍數型操作，適合投注「莊家」或「閒家」，而不適合投注「和局」。'
+                }, {
+                    data: 'PAROLI投注法則因為是在輸的時候減碼，因此可以有效的避免玩家輸光手邊的錢，適合個性保守的百家樂玩家。'
+                }, {
+                    data: 'PAROLI投注法則除了讓百家樂玩家破產的機率降到最低之外，一旦嚴謹依照規則操作，也能讓玩家賺大錢。'
+                }, {
+                    title: '百家樂PAROLI投注法則特點介紹',
+                    data: '若玩家獲勝，則下一局投注的籌碼就加倍。'
+                }, {
+                    data: '相反的，若玩家輸了，則是回頭用最初的投注金額下注。'
+                }, {
+                    title: '百家PAROLI投注法則舉例說明',
+                    data: '若百家樂玩家第一注設定的投注金額為1000元，第一注投注結果為贏，下一局投注金額加倍為2000元，再贏則是加倍為4000元。'
+                }, {
+                    data: '若第四次下注結果為輸，則第五注投注金額回到最初的設定，也就是1000元。'
+                }, {
+                    title: '百家樂雷伯切爾Labouchere投注法',
+                    anchorId: 'RabchelBettingMethod'
+                }, {
+                    title: '百家樂雷伯切爾Labouchere投注法則特點介紹',
+                    data: '雷伯切爾Labouchere投注法則因007電影而聲名大噪，是主角詹姆斯龐德在劇中使用的百家樂投注技巧。'
+                }, {
+                    data: '玩家設定想要贏到手的金額，依照投注法則操作，最後總利潤會等於設定的值。'
+                }, {
+                    title: '如何操作百家樂雷伯切爾Labouchere投注法則？',
+                    data: '首先玩家需要設定好想要贏得的金額'
+                }, {
+                    data: '接著將上述金額拆成N分，由小到大排列，形成一個數列'
+                }, {
+                    data: '加總數列中最小與最大的數字，當作投注金額'
+                }, {
+                    data: '若該局贏了，則從數列上刪掉剛剛加總的最小與最大數字。但若輸了，則要將投注的金額加到數列的最後面，也就是變成最大的數字。'
+                }, {
+                    data: '接著不斷重複上列加總、刪除數列的投注法，一直到數列上所有的數字都被刪去。'
+                }, {
+                    data: '當所有數字都被刪去，就代表百家樂玩家已經達成最開始設定的「想贏得的金額」（「原始數列總和」＋「虧損等值總額」）。'
+                }, {
+                    data: '範例:'
+                }, {
+                    data: '假設玩家想要在百家樂中贏得10個籌碼，並先將其分成4份，分別是1個籌碼、2個籌碼、3個籌碼、4個籌碼，並在紙上記下「1、2、3、4」這個數列。而第一局玩家必須先拿出「1+4=5」，5個籌碼做為下注量。接下來開始遊戲，並觀察每一局的情況'
+                }],
+                baccaratData12: [{
+                    data: '百家樂投注人數：沒有嚴格的人數限制，通常賭場裡面有座位，分別是小桌9位百家樂玩家參與投注，大桌是14位百家樂玩家參與投注（也就是大桌的兩邊圓弧各有7個玩家），站在旁邊的玩家也可以自由加入百家樂遊戲並且參與投注。對於線上百家樂則是更無參與投注的人數限制了。'
+                }, {
+                    data: '百家樂投注注碼限制：當百家樂的莊家或是閒家投注雙方的注碼超過賭桌所限之限紅（註：所謂的「賭檯限紅」，指的就是各個賭場或是線上娛樂城，會根據自己經營上的需要，為每張賭桌設定一個最低投注金額以及最高投注金額。）時，百家樂荷官就會在派發牌給莊家、閒家之前點人頭計算莊家(Banker)、閒家、(Player)、對子(Pair)、和局(Tie)各個百家樂投注選項區域的注碼（又稱為數紅）。超過該百家樂賭桌的限定金額（如前所述的賭檯限紅），並由現場參與投注的玩家減低投注金額，直到達到規定內的金額才會開局開始派牌。注意，這邊的限紅除了最高投注金額之外，也有最低投注金額的設定。'
+                }, {
+                    data: '百家樂投注選擇：百家樂是目前眾多線上娛樂遊戲中最受到歡迎與矚目的項目，遊戲本身簡單易玩，百家樂下注規則是由莊家及閒家比較點數大小，莊閒手牌最多3張，點數最高為9，最低為0。'
+                }, {
+                    data: '一般來說玩家可選擇投注押閒贏或莊贏。但玩家若認為莊家、閒家將會開出一樣的點數，無法分出勝負，則可選擇押注「和局」；玩家若認為莊家、閒家雙方任一方或是雙方同時所拿到的手牌會出現一對（例如拿到兩張5或兩張J），玩家可選擇投注「對子」。要注意的是，10、J、Q、K這幾張牌在百家樂遊戲規則中都計為0點，但是這四張牌任意排列組合都不能作對子！'
+                }, {
+                    data: '另外莊家或閒家任一方的投注注碼最大且是坐在賭桌上的玩家，有權利選擇由以下任一者揭開底牌：'
+                }, {
+                    data: '．自己開牌'
+                }, {
+                    data: '．可以指定在百家樂遊戲場上任一個同樣有投注且坐在賭桌上的玩家開牌'
+                }, {
+                    data: '．也可以選擇由荷官揭開底牌'
+                }, {
+                    data: '有些賭場或是線上娛樂城的規定是直接由荷官開牌，這項細節通常都會在遊戲開始前讓玩家知悉，但是一律不變的是，站立投注者依照規定皆是不能揭開底牌的。'
+                }, {
+                    data: '．百家樂投注賠率：延續上一點的百家樂投注選擇，玩家可以參考以下投注項目與相對應的賠率，根據不同結果，賠率也有所不同，詳細賠率參見以下賠率一覽表。'
+                }]
             }
         },
         methods: {
@@ -448,12 +913,22 @@
             },
             tooglePage(id) {
                 window.sessionStorage.setItem('data', id)
-                if (sessionStorage.getItem('data') == 'shareArticle') {
-                    window.location.href = "../case/shareArticle.html"
-                } else if (sessionStorage.getItem('data') !== 'Baccarat') {
+                if (sessionStorage.getItem('data') === 'homeData') {
                     window.location.href = "../case/Home.html"
+                } if (sessionStorage.getItem('data') === 'BaccaratShareArticle') {
+                    window.location.href = "../case/BaccaratShareArticle.html"
                 }
+                this.anchorFocus(id)
             },
+            anchorFocus(id) {
+                setTimeout(() => {
+                    const anchorId = document.getElementById(id)
+                    anchorId.scrollIntoView()
+                }, 0);
+            },
+        },
+        mounted() {
+            this.anchorFocus(sessionStorage.getItem('data'))
         },
     })
     app.component('Sidebar', {

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>娛樂城分享</title>
+    <title>百家樂文章分享</title>
     <link rel="stylesheet" type="text/css" href="../css/homeStyle.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -39,7 +39,7 @@
                         </svg>
                     </button>
                     <div v-if="menuShow"
-                        class="menu homeNavbar-Y flex-column d-flex justify-content-center align-items-center">
+                        class="menu navbar-Y flex-column d-flex justify-content-center align-items-center">
                         <div @click="menuShow=false" class="fs-3 text-danger ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                 class="mx-1 bi bi-x-square" viewBox="0 0 16 16">
@@ -55,6 +55,7 @@
                             <button @click="tooglePage(item.anchorId)" id="aee" type="button"
                                 class="btn w-100 btn-outline-secondary">
                                 {{ item.data }}
+
                             </button>
                         </div>
                     </div>
@@ -69,17 +70,17 @@
                 <div class="w-100 d-flex">
                     <div style="width: 30%;">
                         <ul class="list-group list-group-flush">
-                            <h2 class="fw-bold py-3">娛樂城分享</h2>
+                            <h2 class="fw-bold py-3">百家樂文章分享</h2>
                             <a class="list-group-item" style="cursor: pointer;" v-for="item in shareArticle"
                                 :class="item.id==showShareArticle? 'text-primary':'text-dark'"
                                 @click="toogleShareArticle(item.id)">{{item.title}}</a>
                         </ul>
                     </div>
                     <div style="width: 70%;" id="shareArticle">
-                        <img src="../images/indexbanner/p08_x39fvv_c_scale,w_1300.jpg" style="width:90%" class="pt-5"
-                            alt="">
-                        <iframe :src=`../case/ShareArticle/ShareArticle${showShareArticle}.html`
-                            style="width: 100%;height:100%" scrolling="no" frameborder="0"></iframe>
+                        <img src="../images/banner/banner.jpg" style="width:90%" class="pt-5" alt="">
+                        <iframe ref="reference"
+                            :src=`../case/BaccaratShareArticle/BaccaratShareArticle${showShareArticle}.html`
+                            style="width: 100%;height:100%;" scrolling="no" frameborder="0"></iframe>
                     </div>
                 </div>
             </div>
@@ -129,121 +130,126 @@
                 menuShow: false,
                 menuData: [   //Menu欄資料 
                     {
-                        data: '首頁',
-                        anchorId: 'app'
-                    }, {
-                        data: '首選GS娛樂城(GSBET)',
+                        data: '返回首頁',
                         anchorId: 'homeData'
                     }, {
-                        data: '娛樂城評比準則',
-                        anchorId: 'evaluationCriteria'
-                    }, {
-                        data: '娛樂城分析適合誰',
-                        anchorId: 'analysisFit'
-                    }, {
-                        data: '娛樂城註冊流程與體驗金',
-                        anchorId: 'signUp'
-                    }, {
-                        data: '娛樂城體驗金',
-                        anchorId: 'ExperienceGold'
-                    }, {
-                        data: '娛樂城Q&A',
-                        anchorId: 'Question'
-                    }, {
-                        data: '娛樂城分享',
-                        anchorId: 'shareArticle',
-                        url: 'add.html'
-                    }, {
-                        data: '百家樂',
+                        data: '返回百家樂介紹',
                         anchorId: 'Baccarat'
                     }, {
-                        data: '玩運彩',
-                        anchorId: ''
+                        data: '百家樂遊戲平台',
+                        anchorId: 'BaccaratGamePlatform'
                     }, {
-                        data: '運彩分析',
-                        anchorId: ''
+                        data: 'SA Gaming沙龍百家樂',
+                        anchorId: 'SalonBaccarat'
                     }, {
-                        data: '首儲送1000',
-                        anchorId: ''
+                        data: 'Allbet歐博真人百家樂',
+                        anchorId: 'OberLiveBaccarat'
+                    }, {
+                        data: 'DG真人百家樂',
+                        anchorId: 'DGLiveBaccarat'
+                    }, {
+                        data: 'WM真人百家樂',
+                        anchorId: 'WMLiveBaccarat'
+                    }, {
+                        data: '百家樂遊戲規則',
+                        anchorId: 'BaccaratGameRules'
+                    }, {
+                        data: '百家樂點數計算',
+                        anchorId: 'BaccaratGameRules',
+                    }, {
+                        data: '百家樂補(博)牌規則',
+                        anchorId: 'BaccaratCompensationBoRules'
+                    }, {
+                        data: 'MARTINGALE投注法',
+                        anchorId: 'MARTINGALEBettingMethod'
+                    }, {
+                        data: '1-2-3投注法',
+                        anchorId: '123BettingMethod'
+                    }, {
+                        data: 'PAROLI投注法',
+                        anchorId: 'PAROLIBettingMethod'
+                    }, {
+                        data: '雷伯切爾投注法',
+                        anchorId: 'RabchelBettingMethod'
+                    }, {
+                        data: '百家樂投注規則',
+                        anchorId: 'BaccaratBettingRules'
                     },
                 ],
                 shareArticle: [   //文章
                     {
-                        title: 'dg百家樂娛樂城推薦',
+                        title: '百家樂線上技巧大公開！',
                         id: '1'
                     }, {
-                        title: '線上娛樂城如何挑選？',
+                        title: 'dg娛樂百家樂',
                         id: '2'
                     }, {
-                        title: '王者娛樂城——娛樂城首選！',
+                        title: '百家樂程式真的存在嗎？',
                         id: '3'
                     }, {
-                        title: '娛樂城體驗金領取方法',
+                        title: '百家樂怎麼玩？',
                         id: '4'
                     }, {
-                        title: '金禾娛樂城評價',
+                        title: '百家樂預測程式app是真的嗎？',
                         id: '5'
                     }, {
-                        title: '完美娛樂城評價',
+                        title: '歐博百家樂外掛程式',
                         id: '6'
                     }, {
-                        title: '94大發網評價',
+                        title: '卡利百家樂破解介紹',
                         id: '7'
                     }, {
-                        title: 'leo娛樂城介紹',
+                        title: '百家樂牌路分析必看！',
                         id: '8'
                     }, {
-                        title: '贏家娛樂城評價',
+                        title: '線上百家樂作弊會被發現嗎？',
                         id: '9'
                     }, {
-                        title: 'q8娛樂城，網友大推薦！',
+                        title: '哪裡找百家樂預測程式免費下載？',
                         id: '10'
                     }, {
-                        title: '九牛娛樂城推薦',
+                        title: '歐博作弊程式',
                         id: '11'
                     }, {
-                        title: '金大發娛樂城推薦',
+                        title: '沙龍百家樂好玩嗎？',
                         id: '12'
                     }, {
-                        title: '通博娛樂城電競博彩',
+                        title: 'sa36百家樂遊戲推薦',
                         id: '13'
                     }, {
-                        title: '九州娛樂城評價',
+                        title: 'wm百家樂評價',
                         id: '14'
                     }, {
-                        title: '財神娛樂城騙人？',
+                        title: '百家樂破解程式真的存在嗎？',
                         id: '15'
                     }, {
-                        title: '娛樂城註冊送現金是真的！',
+                        title: '百家樂詐騙手法',
                         id: '16'
                     }, {
-                        title: '娛樂城註冊金派送',
+                        title: '百家樂試玩活動',
                         id: '17'
                     }, {
-                        title: '娛樂城註冊金怎麼用？',
+                        title: 'dg百家樂試玩，據說是詐騙？',
                         id: '18'
                     }, {
-                        title: '九州娛樂賭城體驗',
+                        title: '百家樂直播，快來看美女！',
                         id: '19'
                     }, {
-                        title: '娛樂城註冊體驗金大派送！',
+                        title: '九州百家樂玩法',
                         id: '20'
                     }, {
-                        title: '線上真人百家樂，刺激又好玩！',
+                        title: 'dg娛樂城百家樂',
                         id: '21'
                     }, {
-                        title: '贈送體驗金娛樂城推薦',
+                        title: '百家樂作弊程式真的存在嗎？',
                         id: '22'
                     }, {
-                        title: '可以換現金的博弈遊戲比較好？',
+                        title: '百家樂破解程式下載檔真的存在嗎？',
                         id: '23'
                     }, {
-                        title: '娛樂城體驗金300免費送',
+                        title: '百家樂破解程式下載方法',
                         id: '24'
-                    }, {
-                        title: '娛樂城註冊送500，馬上體驗！',
-                        id: '25'
-                    },
+                    }
                 ]
             }
         },
@@ -254,12 +260,10 @@
             },
             tooglePage(id) {
                 window.sessionStorage.setItem('data', id)
-                if (sessionStorage.getItem('data') == 'Baccarat') {
-                    window.location.href = "../case/Baccarat.html"
-                } else if (sessionStorage.getItem('data') !== 'shareArticle') {
+                if (sessionStorage.getItem('data') == 'homeData') {
                     window.location.href = "../case/Home.html"
                 } else {
-                    this.showData = 'homeData'
+                    window.location.href = "../case/Baccarat.html"
                 }
             },
             anchorFocus(id) {
@@ -322,3 +326,6 @@
     })
     app.mount('#app')
 </script>
+<style>
+
+</style>
