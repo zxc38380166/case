@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>娛樂城分享</title>
-    <link rel="stylesheet" type="text/css" href="../css/homeStyle.css">
+    <link rel="stylesheet" type="text/css" href="./css/homeStyle.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
@@ -22,9 +22,8 @@
             <div style="width:10%"></div>
             <div style="width: 80%; " class="d-flex justify-content-center">
                 <!-- logo -->
-                <a @click="tooglePage('homeData')" href="javascript:void(0)" style="width: 25%"
-                    class=" d-none d-xl-block ">
-                    <img src="../images\logo\logo_ezcvc2_c_scale,w_600.png" style="width: 250px;height: 100%;" alt="">
+                <a @click="tooglePage('homeData')" href="javascript:void(0)" style="width: 25%">
+                    <img src="./images\logo\logo_ezcvc2_c_scale,w_600.png" style="width: 250px;height: 100%;" alt="">
                 </a>
                 <!-- navbarImg -->
                 <a href="javascript:void(0)" style="width: 65%;" class="ms-4">
@@ -48,7 +47,7 @@
                                 <path
                                     d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                             </svg>Close Menu
-                            <img draggable="false" src="../images\logo\logo_ezcvc2_c_scale,w_600.png" style="width: 75%"
+                            <img draggable="false" src="./images\logo\logo_ezcvc2_c_scale,w_600.png" style="width: 75%"
                                 class="py-3" @click="tooglePage('homeData')">
                         </div>
                         <div class="w-75 py-2" v-for="item in menuData">
@@ -121,7 +120,7 @@
                 <div class="card mb-3" style="max-width: 100%;">
                     <div class="row g-0">
                         <div class="col-xxl-4">
-                            <img src="../images/lottery/lottery4.jpg" class="img-fluid rounded-start" alt="...">
+                            <img src="./images/lottery/lottery4.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-xxl-8">
                             <div class="card-body">
@@ -143,7 +142,7 @@
                 <div class="card mb-3" style="max-width: 100%;">
                     <div class="row g-0">
                         <div class="col-xxl-4">
-                            <img src="../images/lottery/lottery5.jpg" class="img-fluid rounded-start" alt="...">
+                            <img src="./images/lottery/lottery5.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-xxl-8">
                             <div class="card-body">
@@ -169,8 +168,7 @@
                     <p class="fs-5">{{item.data}}</p>
                 </div>
                 <div class="card my-2" style="width: 100%;">
-                    <img src="../images/indexbanner/banner0518_muai1i_c_scale,w_1368.jpg" class="card-img-top"
-                        alt="...">
+                    <img src="./images/indexbanner/banner0518_muai1i_c_scale,w_1368.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p id="OberLiveBaccarat" class="fw-bold fs-3">Allbet歐博真人百家樂</p>
                         <div v-for="item in baccaratData6">
@@ -180,7 +178,7 @@
                     </div>
                 </div>
                 <div class="card my-2" style="width: 100%;">
-                    <img src="../images/indexbanner/p08_x39fvv_c_scale,w_1300.jpg" class="card-img-top" alt="...">
+                    <img src="./images/indexbanner/p08_x39fvv_c_scale,w_1300.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p id="DGLiveBaccarat" class="fw-bold fs-3">DG(Dream Gaming)真人百家樂</p>
                         <div v-for="item in baccaratData7">
@@ -190,7 +188,7 @@
                     </div>
                 </div>
                 <div class="card my-2" style="width: 100%;">
-                    <img src="../images/banner/banner.jpg" class="card-img-top" alt="...">
+                    <img src="./images/banner/banner.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p id="WMLiveBaccarat" class="fw-bold fs-3">WM真人百家樂</p>
                         <div class="fs-5" v-for="item in baccaratData8">
@@ -434,29 +432,11 @@
                 </div>
             </div>
         </div>
+    </div>
 </body>
 
 </html>
-<style>
-</style>
 <script>
-   document.onkeydown = function () {
-      if (window.event && window.event.keyCode == 123) {
-         //F12禁用
-         event.keyCode = 0;
-         event.returnValue = false;
-      }
-      if (window.event && window.event.keyCode == 13) {
-         window.event.keyCode = 505;
-      }
-      if (window.event && window.event.keyCode == 8) {
-         alert(str + "\n请使用Del键进行字符的删除操作！");
-         window.event.returnValue = false;
-      }
-   }
-   document.oncontextmenu = function () {
-      window.event.returnValue = false; //滑鼠右鍵禁用
-   }
     const app = Vue.createApp({
         data() {
             return {

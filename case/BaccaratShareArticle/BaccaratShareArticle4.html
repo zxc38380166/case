@@ -5,47 +5,314 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百家樂怎麼玩？</title>
+    <link rel="stylesheet" type="text/css" href="../css/homeStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/ShareStyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@next"></script>
 </head>
 
 <body>
-    <div class="data">
-        <h3 class="title">百家樂怎麼玩？</h3>
-        <p>無論是實體賭場或是線上娛樂城，百家樂一直都是賭場裡最受歡迎的博弈遊戲之一。許多新手玩家都對百家樂遊戲深感興趣，但卻不知道百家樂怎麼玩。事實上，百家樂是一款純粹靠運氣的博弈遊戲，只要你猜對遊戲結果（莊家贏、閒家贏或和局），就可以把賭桌上的錢帶回家。</p>
-        <p>
-            百家樂堪稱經典的賭博遊戲，在各大賭場中都可以看到其身影。它起源於義大利，後來盛傳於英國、法國等地，時至今日，百家樂已成為全世界最流行的博弈遊戲之一。這款撲克牌遊戲在台灣也同樣深受玩家歡迎，建議玩家先了解一下百家樂怎麼玩，體驗這個頻頻出現在動作片的賭博遊戲有什麼魅力。</p>
-        <p>在了解百家樂怎麼玩之前，必須先清楚了解遊戲規則。百家樂投注人數沒有上限，通常9~14人聚集在一桌；遊戲開始之前，玩家可以選擇押注莊家、閒家或和局，之後會再依開牌結果來決定勝負。投注籌碼最大的玩家，有權利可以掀開底牌，不過有些賭場只允許荷官這麼做。</p>
-        <p>百家樂遊戲基本上和一般押大小的遊戲沒什麼差別，主要是猜對結果的人即為贏家。對剛接觸線上娛樂城的新手玩家來說，要知道百家樂怎麼玩一點都不難，只要隨心所欲押注在莊家或是閒家即可。雖然也有可能是和局，但基本上出現和局的機率並不大；要是玩家真的猜中和局，賠率是比押莊家贏和押閒家贏來得高。</p>
-        <p>在了解百家樂怎麼玩之後，就可以直接到任何一家線上娛樂城試試手氣。畢竟現在疫情尚未有舒緩的跡象，還不能出國旅遊之前，大家還是乖乖待在家裡玩線上博弈遊戲就好。新手玩家則應該領取娛樂城免費贈送的體驗金，反覆練習百家樂怎麼玩，之後才可以在用真錢下注的時候大殺四方。</p>
-        <p>有很多人都說了解百家樂怎麼玩之後，才發現百家樂遊戲一點都不難。只是一張賭桌會使用8副牌進行，使得整個賭局會花比較長的時間才能結束，十分考驗玩家的體力和精力。有些職業玩家會用算牌技巧來贏錢，但對於剛知道百家樂怎麼玩的新手玩家來說，能贏錢就很開心了。</p>
-        <p class="footer">GS娛樂城(GSBET)</p>
+    <div id="app">
+        <Sidebar></Sidebar>
+        <div class="navbar">
+            <div style="width:10%"></div>
+            <div style="width: 80%; " class="d-flex justify-content-center">
+                <!-- logo -->
+                <a @click="tooglePage('homeData')" href="javascript:void(0)" style="width: 25%">
+                    <img src="../images\logo\logo_ezcvc2_c_scale,w_600.png" style="width: 250px;height: 100%;" alt="">
+                </a>
+                <!-- navbarImg -->
+                <a href="javascript:void(0)" style="width: 65%;" class="ms-4">
+                </a>
+                <!-- 側欄選單 -->
+                <a href="javascript:void(0)" style="width: 10%;" class="mt-3">
+                    <button @click="menuShow=true" type="button" class="btn ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                            class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </button>
+                    <div v-if="menuShow"
+                        class="menu navbar-Y flex-column d-flex justify-content-center align-items-center">
+                        <div @click="menuShow=false" class="fs-3 text-danger ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                class="mx-1 bi bi-x-square" viewBox="0 0 16 16">
+                                <path
+                                    d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                <path
+                                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                            </svg>Close Menu
+                            <img draggable="false" src="../images\logo\logo_ezcvc2_c_scale,w_600.png" style="width: 75%"
+                                class="py-3" @click="tooglePage('homeData')">
+                        </div>
+                        <div class="w-75 py-2" v-for="item in menuData">
+                            <button @click="tooglePage(item.anchorId)" id="aee" type="button"
+                                class="btn w-100 btn-outline-secondary">
+                                {{ item.data }}
+
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div style="width:10%"></div>
+        </div>
+        <div :class="{'remove-background':menuShow}" @click="menuShow=false"></div>
+        <div class=" d-flex justify-content-center text-center">
+            <div style="width:10%"></div>
+            <div style="width:80%">
+                <div class="w-100 d-flex">
+                    <div style="width: 100%;" id="shareArticle">
+                        <img src="../images/banner/banner.jpg" style="width:70%" class="pt-5" alt="">
+                        <div class="data">
+                            <h3 class="title">百家樂怎麼玩？</h3>
+                            <p>無論是實體賭場或是線上娛樂城，百家樂一直都是賭場裡最受歡迎的博弈遊戲之一。許多新手玩家都對百家樂遊戲深感興趣，但卻不知道百家樂怎麼玩。事實上，百家樂是一款純粹靠運氣的博弈遊戲，只要你猜對遊戲結果（莊家贏、閒家贏或和局），就可以把賭桌上的錢帶回家。
+                            </p>
+                            <p>
+                                百家樂堪稱經典的賭博遊戲，在各大賭場中都可以看到其身影。它起源於義大利，後來盛傳於英國、法國等地，時至今日，百家樂已成為全世界最流行的博弈遊戲之一。這款撲克牌遊戲在台灣也同樣深受玩家歡迎，建議玩家先了解一下百家樂怎麼玩，體驗這個頻頻出現在動作片的賭博遊戲有什麼魅力。
+                            </p>
+                            <p>在了解百家樂怎麼玩之前，必須先清楚了解遊戲規則。百家樂投注人數沒有上限，通常9~14人聚集在一桌；遊戲開始之前，玩家可以選擇押注莊家、閒家或和局，之後會再依開牌結果來決定勝負。投注籌碼最大的玩家，有權利可以掀開底牌，不過有些賭場只允許荷官這麼做。
+                            </p>
+                            <p>百家樂遊戲基本上和一般押大小的遊戲沒什麼差別，主要是猜對結果的人即為贏家。對剛接觸線上娛樂城的新手玩家來說，要知道百家樂怎麼玩一點都不難，只要隨心所欲押注在莊家或是閒家即可。雖然也有可能是和局，但基本上出現和局的機率並不大；要是玩家真的猜中和局，賠率是比押莊家贏和押閒家贏來得高。
+                            </p>
+                            <p>在了解百家樂怎麼玩之後，就可以直接到任何一家線上娛樂城試試手氣。畢竟現在疫情尚未有舒緩的跡象，還不能出國旅遊之前，大家還是乖乖待在家裡玩線上博弈遊戲就好。新手玩家則應該領取娛樂城免費贈送的體驗金，反覆練習百家樂怎麼玩，之後才可以在用真錢下注的時候大殺四方。
+                            </p>
+                            <p>有很多人都說了解百家樂怎麼玩之後，才發現百家樂遊戲一點都不難。只是一張賭桌會使用8副牌進行，使得整個賭局會花比較長的時間才能結束，十分考驗玩家的體力和精力。有些職業玩家會用算牌技巧來贏錢，但對於剛知道百家樂怎麼玩的新手玩家來說，能贏錢就很開心了。
+                            </p>
+                            <p class="footer">GS娛樂城(GSBET)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width:10%">
+                <div class="top-align" @click="anchorFocus('app')">
+                    <button type="button" class="btn btn-outline-secondary"><svg xmlns="http://www.w3.org/2000/svg"
+                            width="20" height="30" fill="currentColor" class="bi bi-chevron-double-up"
+                            viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z" />
+                            <path fill-rule="evenodd"
+                                d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                        </svg>
+                        <br>Top
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
 </html>
-<style>
-    .title {
-        font-weight: bold;
-    }
-
-    .data {
-        letter-spacing: 2px;
-        font-size: 1.1rem;
-        text-align: center;
-        animation: fadein 1s;
-    }
-
-    .footer {
-        font-size: 1.3rem;
-        color: #6c757d
-    }
-
-    @keyframes fadein {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 1;
-        }
-    }
-</style>
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                title: 'GS娛樂城(GSBET)',
+                showData: 'homeData',
+                showShareArticle: '',
+                menuShow: false,
+                menuData: [   //Menu欄資料 
+                    {
+                        data: '返回首頁',
+                        anchorId: 'homeData'
+                    }, {
+                        data: '返回百家樂介紹',
+                        anchorId: 'Baccarat'
+                    }, {
+                        data: '百家樂遊戲平台',
+                        anchorId: 'BaccaratGamePlatform'
+                    }, {
+                        data: 'SA Gaming沙龍百家樂',
+                        anchorId: 'SalonBaccarat'
+                    }, {
+                        data: 'Allbet歐博真人百家樂',
+                        anchorId: 'OberLiveBaccarat'
+                    }, {
+                        data: 'DG真人百家樂',
+                        anchorId: 'DGLiveBaccarat'
+                    }, {
+                        data: 'WM真人百家樂',
+                        anchorId: 'WMLiveBaccarat'
+                    }, {
+                        data: '百家樂遊戲規則',
+                        anchorId: 'BaccaratGameRules'
+                    }, {
+                        data: '百家樂點數計算',
+                        anchorId: 'BaccaratGameRules',
+                    }, {
+                        data: '百家樂補(博)牌規則',
+                        anchorId: 'BaccaratCompensationBoRules'
+                    }, {
+                        data: 'MARTINGALE投注法',
+                        anchorId: 'MARTINGALEBettingMethod'
+                    }, {
+                        data: '1-2-3投注法',
+                        anchorId: '123BettingMethod'
+                    }, {
+                        data: 'PAROLI投注法',
+                        anchorId: 'PAROLIBettingMethod'
+                    }, {
+                        data: '雷伯切爾投注法',
+                        anchorId: 'RabchelBettingMethod'
+                    }, {
+                        data: '百家樂投注規則',
+                        anchorId: 'BaccaratBettingRules'
+                    },
+                ],
+                shareArticle: [   //文章
+                    {
+                        title: '百家樂線上技巧大公開！',
+                        id: '1'
+                    }, {
+                        title: 'dg娛樂百家樂',
+                        id: '2'
+                    }, {
+                        title: '百家樂程式真的存在嗎？',
+                        id: '3'
+                    }, {
+                        title: '百家樂怎麼玩？',
+                        id: '4'
+                    }, {
+                        title: '百家樂預測程式app是真的嗎？',
+                        id: '5'
+                    }, {
+                        title: '歐博百家樂外掛程式',
+                        id: '6'
+                    }, {
+                        title: '卡利百家樂破解介紹',
+                        id: '7'
+                    }, {
+                        title: '百家樂牌路分析必看！',
+                        id: '8'
+                    }, {
+                        title: '線上百家樂作弊會被發現嗎？',
+                        id: '9'
+                    }, {
+                        title: '哪裡找百家樂預測程式免費下載？',
+                        id: '10'
+                    }, {
+                        title: '歐博作弊程式',
+                        id: '11'
+                    }, {
+                        title: '沙龍百家樂好玩嗎？',
+                        id: '12'
+                    }, {
+                        title: 'sa36百家樂遊戲推薦',
+                        id: '13'
+                    }, {
+                        title: 'wm百家樂評價',
+                        id: '14'
+                    }, {
+                        title: '百家樂破解程式真的存在嗎？',
+                        id: '15'
+                    }, {
+                        title: '百家樂詐騙手法',
+                        id: '16'
+                    }, {
+                        title: '百家樂試玩活動',
+                        id: '17'
+                    }, {
+                        title: 'dg百家樂試玩，據說是詐騙？',
+                        id: '18'
+                    }, {
+                        title: '百家樂直播，快來看美女！',
+                        id: '19'
+                    }, {
+                        title: '九州百家樂玩法',
+                        id: '20'
+                    }, {
+                        title: 'dg娛樂城百家樂',
+                        id: '21'
+                    }, {
+                        title: '百家樂作弊程式真的存在嗎？',
+                        id: '22'
+                    }, {
+                        title: '百家樂破解程式下載檔真的存在嗎？',
+                        id: '23'
+                    }, {
+                        title: '百家樂破解程式下載方法',
+                        id: '24'
+                    }
+                ]
+            }
+        },
+        methods: {
+            toogleShareArticle(id) {
+                window.open(`./BaccaratShareArticle${id}.html`)
+                window.sessionStorage.setItem('showShareArticle', id)
+                this.showShareArticle = sessionStorage.getItem('showShareArticle');
+            },
+            tooglePage(id) {
+                window.sessionStorage.setItem('data', id)
+                if (sessionStorage.getItem('data') == 'homeData') {
+                    window.location.href = "../Home.html"
+                } else {
+                    window.location.href = "../Baccarat.html"
+                }
+            },
+            anchorFocus(id) {
+                setTimeout(() => {
+                    const anchorId = document.getElementById(id)
+                    anchorId.scrollIntoView()
+                }, 0);
+            }
+        },
+        mounted() {
+            sessionStorage.getItem('showShareArticle') == null
+                ? this.showShareArticle = '1' : this.showShareArticle = sessionStorage.getItem('showShareArticle');
+        },
+    })
+    app.component('Sidebar', {
+        template: `<!-- 下欄 -->
+   <div class="sidebar">
+      <div style="cursor: pointer"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+            class="bi bi-house-door" viewBox="0 0 16 16">
+            <path
+               d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+         </svg>
+         <p>首頁</p>
+      </div>
+      <div style="cursor: pointer"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+            class="bi bi-coin" viewBox="0 0 16 16">
+            <path
+               d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9H5.5zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518l.087.02z" />
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" />
+         </svg>
+         <p>點數</p>
+      </div>
+      <div style="cursor: pointer"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+            class="ms-3 bi bi-person" viewBox="0 0 16 16">
+            <path
+               d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+         </svg>
+         <p>登入註冊</p>
+      </div>
+      <div style="cursor: pointer"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+            class="bi bi-piggy-bank" viewBox="0 0 16 16">
+            <path
+               d="M5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm1.138-1.496A6.613 6.613 0 0 1 7.964 4.5c.666 0 1.303.097 1.893.273a.5.5 0 0 0 .286-.958A7.602 7.602 0 0 0 7.964 3.5c-.734 0-1.441.103-2.102.292a.5.5 0 1 0 .276.962z" />
+            <path fill-rule="evenodd"
+               d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069c0-.145-.007-.29-.02-.431.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a.95.95 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.735.735 0 0 0-.375.562c-.024.243.082.48.32.654a2.112 2.112 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595zM2.516 6.26c.455-2.066 2.667-3.733 5.448-3.733 3.146 0 5.536 2.114 5.536 4.542 0 1.254-.624 2.41-1.67 3.248a.5.5 0 0 0-.165.535l.66 2.175h-.985l-.59-1.487a.5.5 0 0 0-.629-.288c-.661.23-1.39.359-2.157.359a6.558 6.558 0 0 1-2.157-.359.5.5 0 0 0-.635.304l-.525 1.471h-.979l.633-2.15a.5.5 0 0 0-.17-.534 4.649 4.649 0 0 1-1.284-1.541.5.5 0 0 0-.446-.275h-.56a.5.5 0 0 1-.492-.414l-.254-1.46h.933a.5.5 0 0 0 .488-.393zm12.621-.857a.565.565 0 0 1-.098.21.704.704 0 0 1-.044-.025c-.146-.09-.157-.175-.152-.223a.236.236 0 0 1 .117-.173c.049-.027.08-.021.113.012a.202.202 0 0 1 .064.199z" />
+         </svg>
+         <p>儲值</p>
+      </div>
+      <div style="cursor: pointer"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+            class="bi bi-cart-check" viewBox="0 0 16 16">
+            <path
+               d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+            <path
+               d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+         </svg>
+         <p>托售</p>
+      </div>
+   </div>`
+    })
+    app.mount('#app')
+</script>

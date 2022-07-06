@@ -1,0 +1,43 @@
+.title {
+    font-weight: bold;
+    padding-top:20px
+}
+
+.data {
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    text-align: center;
+    animation: fadein 1s;
+}
+
+.footer {
+    font-size: 1.3rem;
+    color: #6c757d;
+    height:150px
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+.ShareArticleColor:hover{
+
+    animation: ADD 1s;
+}
+@keyframes ADD {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        color:blue;
+        opacity: 1;
+        border-width:1px;
+        border-style:bold;
+        border-color:black;
+    }
+}
